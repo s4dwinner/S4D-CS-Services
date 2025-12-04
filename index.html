@@ -28,6 +28,7 @@
             --text-secondary: #b0b7c3;
             --success: #00d4aa;
             --warning: #ff6b35;
+            --danger: #ff4757;
             --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
@@ -49,6 +50,18 @@
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -453,6 +466,140 @@
             border: 1px solid rgba(88, 101, 242, 0.2);
         }
         
+        /* ===== THREAT INTELLIGENCE DASHBOARD ===== */
+        .dashboard {
+            background: linear-gradient(180deg, rgba(13, 14, 18, 0.9) 0%, rgba(26, 27, 35, 0.8) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(88, 101, 242, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(0, 234, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .dashboard-title {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dashboard-time {
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .dashboard-card {
+            background: rgba(13, 14, 18, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            transition: var(--transition);
+        }
+        
+        .dashboard-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .card-title {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .card-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 10px;
+        }
+        
+        .card-trend {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .trend-up {
+            color: var(--success);
+        }
+        
+        .trend-down {
+            color: var(--danger);
+        }
+        
+        .dashboard-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .dashboard-update {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
         /* ===== LEGAL NOTICE ===== */
         .legal-notice {
             background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(88, 101, 242, 0.05));
@@ -497,6 +644,42 @@
             color: var(--accent);
             margin-bottom: 12px;
             font-size: 1.5rem;
+        }
+        
+        /* ===== EXPERTISE SECTION ===== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .expertise-item {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .expertise-icon {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: rgba(88, 101, 242, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        .expertise-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .expertise-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
         
         /* ===== CONTACT FORM ===== */
@@ -634,10 +817,37 @@
             left: -9999px;
         }
         
+        /* Form status messages */
+        .form-status {
+            display: none;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .form-status.success {
+            display: block;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            color: var(--success);
+        }
+        
+        .form-status.error {
+            display: block;
+            background: rgba(255, 71, 87, 0.1);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            color: var(--danger);
+        }
+        
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -724,6 +934,10 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 30px;
             }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* ===== UTILITIES ===== */
@@ -770,10 +984,17 @@
             .footer-links {
                 grid-template-columns: 1fr;
             }
+            
+            .dashboard {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Animated background particles -->
+    <canvas class="particles" id="particlesCanvas"></canvas>
+    
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -785,6 +1006,7 @@
             <div class="nav-links" id="navLinks">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#dashboard" class="nav-link">Dashboard</a>
                 <a href="#legal" class="nav-link">Compliance</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="terms-of-service.html" class="nav-link">Legal</a>
@@ -903,6 +1125,149 @@
         </div>
     </section>
 
+    <!-- Expertise Section -->
+    <section id="expertise" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Core Expertise</h2>
+                <p>Deep technical capabilities in advanced cybersecurity domains</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="glass-card fade-in">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h4>Reverse Engineering</h4>
+                            <p>Advanced malware analysis, binary exploitation, and vulnerability research for zero-day discovery.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h4>Network Security</h4>
+                            <p>Advanced network protocol analysis, intrusion detection, and custom firewall rule development.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h4>Cloud Security</h4>
+                            <p>AWS, Azure, and GCP security architecture reviews, container security, and IAM hardening.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="expertise-item">
+                        <div class="expertise-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="expertise-content">
+                            <h4>Threat Intelligence</h4>
+                            <p>Real-time threat intelligence gathering, analysis, and proactive defense strategy development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Threat Intelligence Dashboard -->
+    <section id="dashboard" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Threat Intelligence Dashboard</h2>
+                <p>Real-time security monitoring and threat analysis visualization</p>
+            </div>
+            
+            <div class="dashboard glass-card fade-in">
+                <div class="dashboard-header">
+                    <h3 class="dashboard-title">LIVE SECURITY MONITORING</h3>
+                    <div class="dashboard-time" id="currentTime">00:00:00 UTC</div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <div class="card-title">ACTIVE THREATS</div>
+                            <div class="card-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12%</span>
+                            </div>
+                        </div>
+                        <div class="card-value text-accent" id="threatCount">1,247</div>
+                        <div class="card-trend">
+                            <span>Last 24h: +134</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <div class="card-title">VULNERABILITIES DETECTED</div>
+                            <div class="card-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>8%</span>
+                            </div>
+                        </div>
+                        <div class="card-value text-gradient" id="vulnCount">8,921</div>
+                        <div class="card-trend">
+                            <span>Critical: 247</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <div class="card-title">INCIDENTS RESPONDED</div>
+                            <div class="card-trend trend-down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>15%</span>
+                            </div>
+                        </div>
+                        <div class="card-value" style="color: var(--success);" id="incidentCount">42</div>
+                        <div class="card-trend">
+                            <span>MTTR: 2.4h</span>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <div class="card-title">SECURITY SCORE</div>
+                            <div class="card-trend trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5%</span>
+                            </div>
+                        </div>
+                        <div class="card-value" style="color: var(--warning);" id="securityScore">8.7</div>
+                        <div class="card-trend">
+                            <span>/10 Enterprise Grade</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-footer">
+                    <div class="dashboard-update">
+                        <div class="live-indicator"></div>
+                        <span>LIVE DATA UPDATING</span>
+                    </div>
+                    <div>Last Updated: <span id="lastUpdate">Just now</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Legal Notice -->
     <section id="legal" class="section">
         <div class="container">
@@ -1005,6 +1370,14 @@
                     <h3 style="margin-bottom: 30px; color: var(--text-primary);">Request Security Assessment</h3>
                     
                     <form action="https://formspree.io/f/xdkqderg" method="POST" id="securityForm">
+                        <!-- Status messages -->
+                        <div class="form-status success" id="successMessage" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Request submitted successfully. We'll contact you within 24 hours.
+                        </div>
+                        <div class="form-status error" id="errorMessage" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i> Error submitting form. Please try again or email us directly.
+                        </div>
+                        
                         <!-- Honeypot field -->
                         <input type="text" name="_gotcha" class="honeypot" tabindex="-1">
                         
@@ -1056,7 +1429,7 @@
                             </label>
                         </div>
                         
-                        <button type="submit" class="cta-button accent" style="width: 100%; justify-content: center;">
+                        <button type="submit" class="cta-button accent" id="submitBtn" style="width: 100%; justify-content: center;">
                             <i class="fas fa-paper-plane"></i>
                             SUBMIT SECURE REQUEST
                         </button>
@@ -1119,92 +1492,271 @@
     </footer>
 
     <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // ===== ANIMATED BACKGROUND =====
+        const canvas = document.getElementById('particlesCanvas');
+        const ctx = canvas.getContext('2d');
         
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Fade-in animation on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        };
-        
-        // Initial check
-        fadeInOnScroll();
-        window.addEventListener('scroll', fadeInOnScroll);
-        
-        // Form submission
-        const securityForm = document.getElementById('securityForm');
-        if (securityForm) {
-            securityForm.addEventListener('submit', async (e) => {
-                const submitBtn = securityForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                
-                // Visual feedback
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-                submitBtn.disabled = true;
-                
-                // Form will submit normally to Formspree
-                // Success/error handling would be added via Formspree's JS library if needed
-            });
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
         
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+        // Initialize particles
+        const particles = [];
+        const particleCount = 80;
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = Math.random() > 0.5 ? 'rgba(88, 101, 242, 0.5)' : 'rgba(0, 234, 255, 0.3)';
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
                 
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                // Bounce off edges
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        // Create particles
+        function initParticles() {
+            particles.length = 0;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        // Connect particles with lines
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(88, 101, 242, ${0.2 * (1 - distance/100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
                 }
+            }
+        }
+        
+        // Animation loop
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
             });
+            
+            connectParticles();
+            requestAnimationFrame(animateParticles);
+        }
+        
+        // Initialize canvas and particles
+        window.addEventListener('load', () => {
+            resizeCanvas();
+            initParticles();
+            animateParticles();
         });
         
-        // Initialize
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+        
+        // ===== DASHBOARD FUNCTIONALITY =====
+        function updateDashboardTime() {
+            const now = new Date();
+            const timeString = now.toUTCString().split(' ')[4];
+            document.getElementById('currentTime').textContent = timeString + ' UTC';
+            
+            // Update "last updated" text
+            const minutes = now.getMinutes();
+            const lastUpdate = minutes < 10 ? 'Just now' : `${minutes} minutes ago`;
+            document.getElementById('lastUpdate').textContent = lastUpdate;
+        }
+        
+        // Simulate live data updates
+        function updateDashboardData() {
+            // Random but realistic data fluctuations
+            const threatCount = document.getElementById('threatCount');
+            const vulnCount = document.getElementById('vulnCount');
+            const incidentCount = document.getElementById('incidentCount');
+            const securityScore = document.getElementById('securityScore');
+            
+            const currentThreats = parseInt(threatCount.textContent.replace(/,/g, ''));
+            const currentVulns = parseInt(vulnCount.textContent.replace(/,/g, ''));
+            const currentIncidents = parseInt(incidentCount.textContent);
+            const currentScore = parseFloat(securityScore.textContent);
+            
+            // Small random changes
+            threatCount.textContent = (currentThreats + Math.floor(Math.random() * 5)).toLocaleString();
+            vulnCount.textContent = (currentVulns + Math.floor(Math.random() * 10)).toLocaleString();
+            incidentCount.textContent = currentIncidents + (Math.random() > 0.7 ? 1 : 0);
+            
+            // Score fluctuates slightly
+            const scoreChange = (Math.random() * 0.1 - 0.05);
+            securityScore.textContent = Math.max(8.0, Math.min(9.5, currentScore + scoreChange)).toFixed(1);
+        }
+        
+        // ===== FORM HANDLING =====
+        async function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+            submitBtn.disabled = true;
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    
+                    // Scroll to show success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    
+                    // Update dashboard data on form success (simulated)
+                    updateDashboardData();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                // Error
+                errorMessage.style.display = 'block';
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+        
+        // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', () => {
-            // Trigger initial animations
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Initialize dashboard time
+            updateDashboardTime();
+            setInterval(updateDashboardTime, 1000);
+            
+            // Update dashboard data periodically
+            setInterval(updateDashboardData, 10000);
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Fade-in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = () => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Form submission
+            const securityForm = document.getElementById('securityForm');
+            if (securityForm) {
+                securityForm.addEventListener('submit', handleFormSubmit);
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize animations
             setTimeout(() => {
                 fadeElements.forEach(el => {
                     if (el.getBoundingClientRect().top < window.innerHeight) {
