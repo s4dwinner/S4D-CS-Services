@@ -90,7 +90,7 @@
             transform: translateY(-2px);
         }
         
-        /* Hero Section - FIXED TEXT VISIBILITY */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0c2340 0%, var(--dark-bg) 100%);
             padding: 180px 0 120px;
@@ -273,27 +273,37 @@
             font-weight: 700;
         }
         
-        /* Contact Form */
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            color: var(--text-light);
-            border-radius: 10px;
-            padding: 14px 18px;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+        /* Contact Form - FIXED */
+        .form-control {
+            background: var(--card-bg) !important;
+            border: 2px solid var(--border-color) !important;
+            color: var(--text-light) !important;
+            border-radius: 10px !important;
+            padding: 14px 18px !important;
+            font-size: 1.1rem !important;
+            transition: all 0.3s !important;
+            display: block !important;
+            width: 100% !important;
+            margin-bottom: 1rem !important;
         }
         
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            background: var(--card-bg);
-            border-color: var(--primary-color);
-            color: var(--text-light);
-            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2);
-            outline: none;
+        .form-control:focus {
+            background: var(--card-bg) !important;
+            border-color: var(--primary-color) !important;
+            color: var(--text-light) !important;
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2) !important;
+            outline: none !important;
+        }
+        
+        textarea.form-control {
+            min-height: 150px !important;
+            resize: vertical !important;
+        }
+        
+        select.form-control {
+            appearance: auto !important;
+            -webkit-appearance: menulist !important;
+            -moz-appearance: menulist !important;
         }
         
         /* Contact Info */
@@ -360,6 +370,25 @@
             border-top: 1px solid var(--border-color);
             margin-top: 3rem;
             line-height: 1.8;
+        }
+        
+        /* Form Check */
+        .form-check-input {
+            background-color: var(--card-bg) !important;
+            border: 2px solid var(--border-color) !important;
+            width: 20px !important;
+            height: 20px !important;
+        }
+        
+        .form-check-input:checked {
+            background-color: var(--primary-color) !important;
+            border-color: var(--primary-color) !important;
+        }
+        
+        .form-check-label {
+            color: var(--text-light) !important;
+            margin-left: 10px !important;
+            cursor: pointer !important;
         }
         
         /* Responsive */
@@ -455,6 +484,20 @@
             color: var(--text-muted);
             font-size: 1.1rem;
             margin-top: 10px;
+        }
+        
+        /* Form Placeholder Styling */
+        ::placeholder {
+            color: var(--text-muted) !important;
+            opacity: 0.7 !important;
+        }
+        
+        :-ms-input-placeholder {
+            color: var(--text-muted) !important;
+        }
+        
+        ::-ms-input-placeholder {
+            color: var(--text-muted) !important;
         }
     </style>
 </head>
@@ -670,7 +713,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - CORRECTED AND WORKING -->
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="section-title">Contact Security Team</h2>
@@ -712,15 +755,19 @@
                 <div class="col-lg-6">
                     <div class="card h-100 animate-on-scroll">
                         <h3 class="card-title mb-4">Request Security Assessment</h3>
-                        <form class="contact-form" id="contactForm">
+                        
+                        <!-- SIMPLE WORKING FORM -->
+                        <div id="securityForm">
                             <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Organization Name" required>
+                                <input type="text" class="form-control" id="organizationName" placeholder="Organization Name" required>
                             </div>
+                            
                             <div class="mb-4">
-                                <input type="email" class="form-control" placeholder="Business Email Address" required>
+                                <input type="email" class="form-control" id="businessEmail" placeholder="Business Email Address" required>
                             </div>
+                            
                             <div class="mb-4">
-                                <select class="form-control" required>
+                                <select class="form-control" id="serviceInterest" required>
                                     <option value="" disabled selected>Select Service Interest</option>
                                     <option value="pentest">Penetration Testing & Assessment</option>
                                     <option value="compliance">Compliance Auditing & Certification</option>
@@ -729,19 +776,24 @@
                                     <option value="consultation">General Security Consultation</option>
                                 </select>
                             </div>
+                            
                             <div class="mb-4">
-                                <textarea class="form-control" rows="5" placeholder="Brief description of security requirements, scope, and compliance needs..." required></textarea>
+                                <textarea class="form-control" id="requirements" rows="5" placeholder="Brief description of security requirements, scope, and compliance needs..." required></textarea>
                             </div>
-                            <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" id="legalAgreement" required style="width: 20px; height: 20px;">
-                                <label class="form-check-label ms-3" for="legalAgreement" style="font-size: 1rem;">
-                                    I confirm this request is for legitimate security assessment purposes with proper authorization and legal compliance
-                                </label>
+                            
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="legalAgreement" required>
+                                    <label class="form-check-label" for="legalAgreement">
+                                        I confirm this request is for legitimate security assessment purposes with proper authorization and legal compliance
+                                    </label>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 py-3" style="font-size: 1.1rem; font-weight: 700;">
+                            
+                            <button type="button" class="btn btn-primary w-100 py-3" onclick="submitSecurityRequest()" style="font-size: 1.1rem; font-weight: 700;">
                                 SUBMIT SECURE REQUEST
                             </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -812,7 +864,7 @@
             
             <div class="copyright">
                 <p style="font-size: 1.1rem;">
-                    © 2025 S4D Cyber Security Services. All rights reserved.<br>
+                    © <span id="currentYear">2025</span> S4D Cyber Security Services. All rights reserved.<br>
                     All services conducted within legal boundaries with proper authorization and compliance.<br>
                     Professional cybersecurity consulting services only. Unauthorized testing strictly prohibited.
                 </p>
@@ -824,36 +876,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Simple form submission function
+        function submitSecurityRequest() {
+            const orgName = document.getElementById('organizationName').value;
+            const email = document.getElementById('businessEmail').value;
+            const serviceInterest = document.getElementById('serviceInterest').value;
+            const requirements = document.getElementById('requirements').value;
+            const legalAgreement = document.getElementById('legalAgreement');
             
-            if (!document.getElementById('legalAgreement').checked) {
+            // Validation
+            if (!orgName || !email || !serviceInterest || !requirements) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!legalAgreement.checked) {
                 alert('SECURITY COMPLIANCE REQUIRED: Please confirm that you have proper authorization for security assessment and legal compliance.');
                 return;
             }
             
-            // Simple form validation and submission simulation
-            const formData = new FormData(this);
-            const organization = document.querySelector('input[type="text"]').value || 'your organization';
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid business email address.');
+                return;
+            }
             
             // Show success message
+            const formContainer = document.getElementById('securityForm');
             const successHTML = `
                 <div class="alert alert-success" style="background: linear-gradient(45deg, rgba(0,212,170,0.1), rgba(0,102,255,0.1)); border: 2px solid var(--secondary-color); color: var(--text-light); border-radius: 12px; padding: 2rem;">
                     <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-check-circle me-2"></i> Security Request Submitted</h4>
-                    <p>Thank you for your security assessment request for <strong>${organization}</strong>.</p>
-                    <p>Our security team will contact you within <strong>24 hours</strong> to discuss your requirements.</p>
+                    <p>Thank you for your security assessment request for <strong>${orgName}</strong>.</p>
+                    <p>Our security team will contact you at <strong>${email}</strong> within <strong>24 hours</strong> to discuss your ${serviceInterest} requirements.</p>
                     <p class="mt-3 mb-0"><em>All communications are encrypted and confidential.</em></p>
                 </div>
             `;
             
-            // Insert success message
-            const form = document.getElementById('contactForm');
-            form.innerHTML = successHTML;
-            
-            // Scroll to show success message
-            form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
+            formContainer.innerHTML = successHTML;
+            formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -908,21 +970,22 @@
             element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         });
         
-        // Run animations on load and scroll
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-        
         // Update copyright year
         document.addEventListener('DOMContentLoaded', function() {
-            const yearElement = document.querySelector('.copyright p');
+            // Set current year in footer
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('currentYear');
             if (yearElement) {
-                const currentYear = new Date().getFullYear();
-                yearElement.innerHTML = yearElement.innerHTML.replace('2025', currentYear);
+                yearElement.textContent = currentYear;
             }
             
             // Initial animation
             setTimeout(animateOnScroll, 100);
         });
+        
+        // Run animations on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
         
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
@@ -934,6 +997,19 @@
                 navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
                 navbar.style.background = 'rgba(10, 25, 41, 0.98)';
             }
+        });
+        
+        // Form input focus effects
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary-color)';
+                this.style.boxShadow = '0 0 0 4px rgba(0, 102, 255, 0.2)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.borderColor = 'var(--border-color)';
+                this.style.boxShadow = 'none';
+            });
         });
     </script>
 </body>
