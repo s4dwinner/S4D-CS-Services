@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="S4D Cyber Security Services - Advanced Digital Protection Solutions. Professional cybersecurity consulting, penetration testing, and security assessments.">
-    <meta name="keywords" content="cybersecurity, penetration testing, security assessment, vulnerability assessment, incident response, ISO 27001, GDPR compliance">
+    <meta name="description" content="S4D Cyber Security Services - Professional cybersecurity consulting, penetration testing, and security assessments with proper authorization.">
+    <meta name="keywords" content="cybersecurity, penetration testing, security assessment, ethical hacking, incident response, GDPR compliance">
     <meta name="author" content="S4D Cyber Security Services">
     
-    <title>S4D Cyber Security Services | Advanced Digital Protection Solutions</title>
+    <title>S4D Cyber Security | Professional Security Solutions</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary-color: #0066ff;
-            --secondary-color: #00d4aa;
-            --accent-color: #ff6b35;
+            --primary-blue: #0066ff;
+            --cyber-green: #00d4aa;
+            --warning-orange: #ff6b35;
             --dark-bg: #0a1929;
             --darker-bg: #07121f;
-            --card-bg: #1e2b3a;
+            --card-bg: #1a2b3c;
             --text-light: #ffffff;
             --text-muted: #b0c4d4;
             --border-color: #2a3b4d;
@@ -51,12 +51,12 @@
             padding: 0 20px;
         }
         
-        /* Navigation */
+        /* ===== NAVIGATION ===== */
         .navbar {
-            background-color: rgba(10, 25, 41, 0.98);
+            background-color: rgba(10, 25, 41, 0.98) !important;
             backdrop-filter: blur(10px);
-            padding: 1.2rem 0;
-            border-bottom: 2px solid var(--primary-color);
+            padding: 1rem 0;
+            border-bottom: 2px solid var(--primary-blue);
             position: fixed;
             width: 100%;
             top: 0;
@@ -64,43 +64,62 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
         
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: var(--text-light);
-            letter-spacing: 1px;
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
         }
         
-        .navbar-brand span {
-            color: var(--primary-color);
+        .logo-shield {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--cyber-green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+        }
+        
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .logo-text span {
+            color: var(--cyber-green);
         }
         
         .nav-link {
-            color: var(--text-light) !important;
             font-weight: 600;
-            margin: 0 12px;
-            transition: all 0.3s;
-            padding: 8px 16px !important;
+            color: var(--text-light) !important;
+            padding: 8px 20px !important;
+            margin: 0 5px;
             border-radius: 6px;
+            transition: all 0.3s ease;
         }
         
         .nav-link:hover {
-            color: var(--text-light) !important;
             background: rgba(0, 102, 255, 0.15);
             transform: translateY(-2px);
         }
         
-        /* Hero Section */
-        .hero {
+        /* ===== HERO SECTION ===== */
+        .hero-section {
             background: linear-gradient(135deg, #0c2340 0%, var(--dark-bg) 100%);
             padding: 180px 0 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-top: 80px;
+            margin-top: 76px;
         }
         
-        .hero::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -110,7 +129,6 @@
             background: 
                 radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
-            z-index: 1;
         }
         
         .hero-content {
@@ -118,48 +136,77 @@
             z-index: 2;
         }
         
-        .hero h1 {
-            font-size: 3.8rem;
+        .hero-title {
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            color: var(--text-light);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            line-height: 1.2;
+            background: linear-gradient(45deg, var(--text-light), var(--cyber-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .hero .lead {
+        .hero-subtitle {
             font-size: 1.4rem;
-            color: var(--secondary-color);
+            color: var(--cyber-green);
             max-width: 800px;
             margin: 0 auto 3rem;
             font-weight: 500;
         }
         
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary-blue), var(--cyber-green));
             border: none;
             padding: 16px 40px;
             font-weight: 700;
-            border-radius: 10px;
-            transition: all 0.3s;
             font-size: 1.1rem;
-            letter-spacing: 0.5px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
         }
         
-        .btn-primary:hover {
+        .cta-button:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
+            color: white;
         }
         
-        /* Section Styles */
+        /* ===== STATS ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--cyber-green);
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== SERVICES ===== */
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 4rem;
             text-align: center;
+            margin-bottom: 3rem;
             color: var(--text-light);
-            position: relative;
         }
         
         .section-title::after {
@@ -167,212 +214,88 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            margin: 20px auto;
+            background: linear-gradient(45deg, var(--primary-blue), var(--cyber-green));
+            margin: 15px auto;
             border-radius: 2px;
         }
         
-        /* Cards */
-        .card {
-            background: linear-gradient(145deg, var(--card-bg), #182736);
+        .service-card {
+            background: var(--card-bg);
             border: 2px solid var(--border-color);
             border-radius: 16px;
             padding: 2.5rem;
             height: 100%;
-            transition: all 0.4s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .card:hover {
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--cyber-green));
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary-color);
+            border-color: var(--primary-blue);
             box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
         }
         
-        .card-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            text-shadow: 0 4px 8px rgba(0, 212, 170, 0.3);
+        .service-card:hover::before {
+            transform: translateX(0);
         }
         
-        .card-title {
+        .service-icon {
+            font-size: 3rem;
+            color: var(--cyber-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-title {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             color: var(--text-light);
         }
         
-        .card p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Lists */
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .feature-list li {
-            padding: 12px 0;
-            color: var(--text-light);
-            position: relative;
-            padding-left: 36px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-            font-weight: bold;
-            font-size: 1.3rem;
-            top: 10px;
-        }
-        
-        /* Methodology & Values */
-        .methodology-item, .value-item {
-            background: linear-gradient(145deg, var(--card-bg), #1a2938);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            height: 100%;
-            transition: all 0.3s;
-        }
-        
-        .methodology-item:hover, .value-item:hover {
-            border-color: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            text-shadow: 0 4px 8px rgba(0, 212, 170, 0.3);
-        }
-        
-        /* Legal Disclaimer */
-        .legal-disclaimer {
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 102, 255, 0.1) 100%);
-            border: 2px solid var(--accent-color);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin: 4rem 0;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
-        }
-        
-        .legal-disclaimer h3 {
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        /* Contact Form - FIXED */
-        .form-control {
-            background: var(--card-bg) !important;
+        /* ===== CONTACT FORM ===== */
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.05) !important;
             border: 2px solid var(--border-color) !important;
             color: var(--text-light) !important;
             border-radius: 10px !important;
             padding: 14px 18px !important;
             font-size: 1.1rem !important;
-            transition: all 0.3s !important;
-            display: block !important;
             width: 100% !important;
-            margin-bottom: 1rem !important;
+            margin-bottom: 1.5rem !important;
+            transition: all 0.3s ease !important;
         }
         
-        .form-control:focus {
-            background: var(--card-bg) !important;
-            border-color: var(--primary-color) !important;
-            color: var(--text-light) !important;
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: var(--primary-blue) !important;
             box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2) !important;
             outline: none !important;
         }
         
-        textarea.form-control {
-            min-height: 150px !important;
-            resize: vertical !important;
-        }
-        
-        select.form-control {
-            appearance: auto !important;
-            -webkit-appearance: menulist !important;
-            -moz-appearance: menulist !important;
-        }
-        
-        /* Contact Info */
-        .contact-info {
-            background: linear-gradient(145deg, var(--card-bg), #182736);
-            border-radius: 16px;
-            padding: 2.5rem;
-            border: 2px solid var(--border-color);
-        }
-        
-        .contact-info h5 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--darker-bg);
-            border-top: 2px solid var(--primary-color);
-            padding: 5rem 0 3rem;
-            margin-top: 6rem;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 800;
+        .form-label {
             color: var(--text-light);
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
-        }
-        
-        .footer-logo span {
-            color: var(--primary-color);
-        }
-        
-        .footer h5 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 8px;
             display: block;
-            margin-bottom: 12px;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-            padding: 6px 0;
         }
         
-        .footer-links a:hover {
-            color: var(--secondary-color);
-            transform: translateX(5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 1rem;
-            padding-top: 3rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
-            line-height: 1.8;
-        }
-        
-        /* Form Check */
         .form-check-input {
             background-color: var(--card-bg) !important;
             border: 2px solid var(--border-color) !important;
@@ -381,70 +304,127 @@
         }
         
         .form-check-input:checked {
-            background-color: var(--primary-color) !important;
-            border-color: var(--primary-color) !important;
+            background-color: var(--primary-blue) !important;
+            border-color: var(--primary-blue) !important;
         }
         
         .form-check-label {
             color: var(--text-light) !important;
             margin-left: 10px !important;
-            cursor: pointer !important;
         }
         
-        /* Responsive */
+        .submit-button {
+            background: linear-gradient(45deg, var(--primary-blue), var(--cyber-green));
+            border: none;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            color: white;
+            width: 100%;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* ===== LEGAL NOTICE ===== */
+        .legal-notice {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 102, 255, 0.1));
+            border: 2px solid var(--warning-orange);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--darker-bg);
+            border-top: 2px solid var(--primary-blue);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-blue);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .contact-info-item i {
+            color: var(--cyber-green);
+            margin-right: 12px;
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .hero h1 {
+            .hero-title {
                 font-size: 3rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
             }
         }
         
         @media (max-width: 768px) {
-            .hero {
+            .hero-section {
                 padding: 140px 0 80px;
                 margin-top: 70px;
             }
             
-            .hero h1 {
+            .hero-title {
                 font-size: 2.5rem;
             }
             
-            .hero .lead {
+            .hero-subtitle {
                 font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
             }
             
             .section-title {
                 font-size: 1.8rem;
             }
             
-            .card {
-                padding: 2rem;
-            }
-            
-            .navbar-brand {
-                font-size: 1.5rem;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .btn-primary {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-        }
-        
-        /* Animation */
+        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -456,48 +436,8 @@
             }
         }
         
-        .animate-on-scroll {
+        .fade-in {
             animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        /* Utility Classes */
-        .text-gradient {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .highlight {
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-        }
-        
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-        
-        /* Form Placeholder Styling */
-        ::placeholder {
-            color: var(--text-muted) !important;
-            opacity: 0.7 !important;
-        }
-        
-        :-ms-input-placeholder {
-            color: var(--text-muted) !important;
-        }
-        
-        ::-ms-input-placeholder {
-            color: var(--text-muted) !important;
         }
     </style>
 </head>
@@ -505,12 +445,15 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <span>S4D</span> CYBER SECURITY
+            <a class="nav-logo" href="#">
+                <div class="logo-shield">S4D</div>
+                <div class="logo-text">CYBER <span>SECURITY</span></div>
             </a>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
@@ -524,35 +467,30 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Enterprise Cybersecurity Defense Solutions</h1>
-            <p class="lead">Advanced Threat Intelligence & Comprehensive Security Assessment</p>
-            <a href="#contact" class="btn btn-primary btn-lg">REQUEST SECURITY AUDIT</a>
-            <div class="row mt-5 pt-4">
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="text-center">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Security Monitoring</div>
-                    </div>
+    <section id="home" class="hero-section">
+        <div class="container hero-content fade-in">
+            <h1 class="hero-title">Enterprise Cybersecurity Defense Solutions</h1>
+            <p class="hero-subtitle">Advanced Threat Intelligence & Comprehensive Security Assessment</p>
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-shield-alt me-2"></i> REQUEST SECURITY AUDIT
+            </a>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Security Monitoring</div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="text-center">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Legal Compliance</div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Legal Compliance</div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="text-center">
-                        <div class="stat-number">ISO</div>
-                        <div class="stat-label">27001 Certified</div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">ISO</div>
+                    <div class="stat-label">27001 Certified</div>
                 </div>
-                <div class="col-md-3 col-6 mb-4">
-                    <div class="text-center">
-                        <div class="stat-number">Global</div>
-                        <div class="stat-label">Service Coverage</div>
-                    </div>
+                <div class="stat-item">
+                    <div class="stat-number">Global</div>
+                    <div class="stat-label">Service Coverage</div>
                 </div>
             </div>
         </div>
@@ -561,48 +499,84 @@
     <!-- Services Section -->
     <section id="services" class="py-5">
         <div class="container">
-            <h2 class="section-title">Professional Security Services</h2>
+            <h2 class="section-title fade-in">Professional Security Services</h2>
+            
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="card-title">Penetration Testing</h3>
-                        <p>Comprehensive security testing to identify and remediate vulnerabilities with full authorization and legal compliance.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="service-title">Penetration Testing</h3>
+                        <p>Comprehensive security testing to identify vulnerabilities with full authorization and legal compliance.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Web Apps</span>
+                            <span class="badge bg-primary">Network</span>
+                            <span class="badge bg-primary">Mobile</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-chess-board"></i></div>
-                        <h3 class="card-title">Security Architecture</h3>
-                        <p>Evaluation and hardening of security infrastructure to ensure robust defense mechanisms and compliance standards.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-first-aid"></i></div>
+                        <h3 class="service-title">Incident Response</h3>
+                        <p>Rapid response to security incidents with detailed forensic analysis and recovery planning.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Forensics</span>
+                            <span class="badge bg-primary">Recovery</span>
+                            <span class="badge bg-primary">Analysis</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-first-aid"></i></div>
-                        <h3 class="card-title">Incident Response</h3>
-                        <p>Rapid response to security incidents with detailed forensic analysis and comprehensive recovery planning.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3 class="service-title">Compliance Auditing</h3>
+                        <p>GDPR, ISO 27001, PCI DSS, and regulatory compliance assessments with full documentation.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">GDPR</span>
+                            <span class="badge bg-primary">ISO 27001</span>
+                            <span class="badge bg-primary">PCI DSS</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <h3 class="card-title">Security Training</h3>
-                        <p>Comprehensive training programs to enhance organizational security culture, awareness, and best practices.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-chess-board"></i></div>
+                        <h3 class="service-title">Security Architecture</h3>
+                        <p>Evaluation and hardening of security infrastructure to ensure robust defense mechanisms.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Design</span>
+                            <span class="badge bg-primary">Review</span>
+                            <span class="badge bg-primary">Hardening</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-clipboard-check"></i></div>
-                        <h3 class="card-title">Compliance Auditing</h3>
-                        <p>GDPR, ISO 27001, PCI DSS, and regulatory compliance assessments with full documentation and reporting.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="service-title">Security Training</h3>
+                        <p>Comprehensive training programs to enhance organizational security culture and awareness.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Awareness</span>
+                            <span class="badge bg-primary">Workshops</span>
+                            <span class="badge bg-primary">Simulations</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4">
-                    <div class="card animate-on-scroll">
-                        <div class="card-icon"><i class="fas fa-desktop"></i></div>
-                        <h3 class="card-title">Managed Security</h3>
-                        <p>24/7 monitoring, threat detection, and ongoing security management for continuous organizational protection.</p>
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                        <h3 class="service-title">Managed Security</h3>
+                        <p>24/7 monitoring, threat detection, and ongoing security management for continuous protection.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Monitoring</span>
+                            <span class="badge bg-primary">Threat Detection</span>
+                            <span class="badge bg-primary">Management</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -612,45 +586,39 @@
     <!-- Expertise Section -->
     <section id="expertise" class="py-5" style="background: rgba(0,0,0,0.2);">
         <div class="container">
-            <h2 class="section-title">Security Expertise</h2>
+            <h2 class="section-title fade-in">Security Expertise</h2>
+            
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <div class="card h-100 animate-on-scroll">
-                        <h3 class="card-title mb-4">Core Capabilities</h3>
-                        <ul class="feature-list">
-                            <li>Network Security Analysis & Architecture</li>
-                            <li>Web Application Security Testing</li>
-                            <li>Mobile Security Assessment</li>
-                            <li>Cloud Infrastructure Security</li>
-                            <li>Threat Intelligence & Monitoring</li>
-                            <li>Cryptography & Data Protection</li>
-                            <li>Security Policy Development</li>
-                            <li>Risk Assessment & Management</li>
+                    <div class="service-card h-100 fade-in">
+                        <h3 class="service-title mb-4">Core Capabilities</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Network Security Analysis</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Web Application Security</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Mobile Security Assessment</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Cloud Infrastructure Security</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Threat Intelligence & Monitoring</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Cryptography & Data Protection</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i> Security Policy Development</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Risk Assessment & Management</li>
                         </ul>
                     </div>
                 </div>
+                
                 <div class="col-md-6 mb-4">
-                    <div class="card h-100 animate-on-scroll">
-                        <h3 class="card-title mb-4">Methodology & Approach</h3>
-                        <div class="row mt-3">
-                            <div class="col-12 mb-4">
-                                <div class="methodology-item">
-                                    <h4 class="highlight">Proactive Defense Strategy</h4>
-                                    <p class="mt-3">Anticipate and mitigate threats before they materialize through continuous monitoring and advanced analysis techniques.</p>
-                                </div>
-                            </div>
-                            <div class="col-12 mb-4">
-                                <div class="methodology-item">
-                                    <h4 class="highlight">Intelligence-Driven Security</h4>
-                                    <p class="mt-3">Leverage comprehensive threat intelligence to inform security decisions and implement effective defensive measures.</p>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="methodology-item">
-                                    <h4 class="highlight">Comprehensive Risk Management</h4>
-                                    <p class="mt-3">Identify, assess, and mitigate risks across all organizational assets, processes, and digital infrastructure.</p>
-                                </div>
-                            </div>
+                    <div class="service-card h-100 fade-in">
+                        <h3 class="service-title mb-4">Methodology & Approach</h3>
+                        <div class="mb-4">
+                            <h5 class="fw-bold" style="color: var(--cyber-green);">Proactive Defense Strategy</h5>
+                            <p>Anticipate and mitigate threats before they materialize through continuous monitoring and advanced analysis.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="fw-bold" style="color: var(--cyber-green);">Intelligence-Driven Security</h5>
+                            <p>Leverage comprehensive threat intelligence to inform security decisions and implement effective defenses.</p>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold" style="color: var(--cyber-green);">Comprehensive Risk Management</h5>
+                            <p>Identify, assess, and mitigate risks across all organizational assets, processes, and infrastructure.</p>
                         </div>
                     </div>
                 </div>
@@ -658,142 +626,158 @@
         </div>
     </section>
 
-    <!-- Values Section -->
+    <!-- Legal Notice -->
     <section class="py-5">
         <div class="container">
-            <h2 class="section-title">Our Core Values</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-item animate-on-scroll">
-                        <div class="value-icon"><i class="fas fa-lock"></i></div>
-                        <h4>Confidentiality</h4>
-                        <p>Protecting client information with military-grade encryption and strict access controls.</p>
+            <div class="legal-notice fade-in">
+                <h3 class="text-center mb-4" style="color: var(--warning-orange);">
+                    <i class="fas fa-gavel me-2"></i> Legal & Ethical Compliance
+                </h3>
+                <p class="text-center mb-4">S4D Cyber Security operates under strict legal and ethical guidelines with full transparency:</p>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-file-signature fa-2x mb-3" style="color: var(--warning-orange);"></i>
+                        <p>Written Authorization Required</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-item animate-on-scroll">
-                        <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
-                        <h4>Integrity</h4>
-                        <p>Ethical conduct, transparency, and accountability in all client engagements and operations.</p>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-balance-scale fa-2x mb-3" style="color: var(--warning-orange);"></i>
+                        <p>Legal Compliance Adherence</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-item animate-on-scroll">
-                        <div class="value-icon"><i class="fas fa-user-tie"></i></div>
-                        <h4>Professionalism</h4>
-                        <p>Certified cybersecurity experts delivering enterprise-grade solutions with excellence.</p>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-user-shield fa-2x mb-3" style="color: var(--warning-orange);"></i>
+                        <p>Ethical Guidelines Followed</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="value-item animate-on-scroll">
-                        <div class="value-icon"><i class="fas fa-gavel"></i></div>
-                        <h4>Legal Compliance</h4>
-                        <p>Strict adherence to all applicable laws, regulations, and industry standards worldwide.</p>
+                    <div class="col-md-3 mb-3">
+                        <i class="fas fa-lock fa-2x mb-3" style="color: var(--warning-orange);"></i>
+                        <p>Client Confidentiality</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Legal Disclaimer -->
-    <section class="py-5">
-        <div class="container">
-            <div class="legal-disclaimer animate-on-scroll">
-                <h3><i class="fas fa-exclamation-triangle me-2"></i> Legal & Ethical Compliance</h3>
-                <p class="mb-4">S4D Cyber Security Services operates under strict legal and ethical guidelines with full transparency:</p>
-                <ul class="feature-list">
-                    <li>All security assessments performed with proper written authorization</li>
-                    <li>Strict adherence to applicable laws, regulations, and industry standards</li>
-                    <li>Ethical guidelines followed in all client engagements and operations</li>
-                    <li>Services only provided with explicit written consent from authorized personnel</li>
-                    <li>No unauthorized access, testing, or illegal activities conducted</li>
-                    <li>Full compliance with GDPR, CCPA, and international data protection regulations</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section - CORRECTED AND WORKING -->
+    <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="section-title">Contact Security Team</h2>
+            <h2 class="section-title fade-in">Contact Security Team</h2>
+            
             <div class="row">
+                <!-- Contact Information -->
                 <div class="col-lg-6 mb-4">
-                    <div class="contact-info h-100 animate-on-scroll">
-                        <h3 class="card-title mb-4">Professional Consultation</h3>
+                    <div class="service-card h-100 fade-in">
+                        <h3 class="service-title mb-4">
+                            <i class="fas fa-headset me-2"></i> Professional Consultation
+                        </h3>
                         
-                        <p class="mb-4"><strong><i class="fas fa-envelope me-3" style="color: var(--secondary-color);"></i> Professional Contact:</strong><br>
-                        <a href="mailto:supports4dservices@protonmail.com" class="highlight" style="font-size: 1.2rem;">
-                            supports4dservices@protonmail.com
-                        </a></p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Professional Email:</strong><br>
+                                <a href="mailto:supports4dservices@protonmail.com" style="color: var(--cyber-green);">
+                                    supports4dservices@protonmail.com
+                                </a>
+                            </div>
+                        </div>
                         
-                        <p class="mb-4"><strong><i class="fas fa-clock me-3" style="color: var(--secondary-color);"></i> Response Time:</strong><br>
-                        <span class="highlight">Within 24 hours</span> for professional inquiries and security consultations</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Response Time:</strong><br>
+                                <span style="color: var(--cyber-green);">Within 24 hours</span> for professional inquiries
+                            </div>
+                        </div>
                         
-                        <p class="mb-4"><strong><i class="fas fa-check-circle me-3" style="color: var(--secondary-color);"></i> Initial Assessment:</strong><br>
-                        <span class="highlight">Free consultation</span> to discuss your security requirements and compliance needs</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <strong>Initial Assessment:</strong><br>
+                                <span style="color: var(--cyber-green);">Free consultation</span> to discuss requirements
+                            </div>
+                        </div>
                         
-                        <p class="mb-4"><strong><i class="fas fa-globe me-3" style="color: var(--secondary-color);"></i> Service Coverage:</strong><br>
-                        <span class="highlight">Global cybersecurity services</span> and international support capabilities</p>
+                        <div class="contact-info-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>Service Coverage:</strong><br>
+                                <span style="color: var(--cyber-green);">Global cybersecurity services</span>
+                            </div>
+                        </div>
                         
-                        <div class="mt-5">
-                            <h5 class="mb-3">Legitimate Service Areas:</h5>
-                            <ul class="feature-list">
-                                <li>Vulnerability Disclosure Program Management</li>
-                                <li>Bug Bounty Program Setup & Management</li>
-                                <li>Security Awareness Training Programs</li>
-                                <li>Brand Protection & Digital Risk Monitoring</li>
-                                <li>Phishing Simulation & Testing Services</li>
-                                <li>Security Documentation Review</li>
-                                <li>Compliance Framework Implementation</li>
-                                <li>Cybersecurity Maturity Assessment</li>
-                            </ul>
+                        <div class="mt-4">
+                            <h5 class="fw-bold mb-3" style="color: var(--cyber-green);">Service Areas:</h5>
+                            <div class="row">
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">• Penetration Testing</li>
+                                        <li class="mb-2">• Compliance Auditing</li>
+                                        <li class="mb-2">• Incident Response</li>
+                                        <li class="mb-2">• Security Training</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">• Vulnerability Assessment</li>
+                                        <li class="mb-2">• Risk Management</li>
+                                        <li class="mb-2">• Security Architecture</li>
+                                        <li>• Digital Forensics</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Contact Form -->
                 <div class="col-lg-6">
-                    <div class="card h-100 animate-on-scroll">
-                        <h3 class="card-title mb-4">Request Security Assessment</h3>
+                    <div class="service-card fade-in">
+                        <h3 class="service-title mb-4">
+                            <i class="fas fa-file-alt me-2"></i> Request Security Assessment
+                        </h3>
                         
-                        <!-- SIMPLE WORKING FORM -->
-                        <div id="securityForm">
-                            <div class="mb-4">
-                                <input type="text" class="form-control" id="organizationName" placeholder="Organization Name" required>
+                        <!-- FORMSPREE FORM WITH YOUR ID -->
+                        <form class="contact-form" action="https://formspree.io/f/xdkqderg" method="POST">
+                            <input type="hidden" name="_subject" value="New Security Assessment Request - S4D Cyber">
+                            <input type="hidden" name="_replyto" value="supports4dservices@protonmail.com">
+                            
+                            <label class="form-label" for="organization">Organization Name *</label>
+                            <input type="text" id="organization" name="organization" required>
+                            
+                            <label class="form-label" for="email">Business Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            
+                            <label class="form-label" for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                            
+                            <label class="form-label" for="service">Service Needed *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="penetration-testing">Penetration Testing</option>
+                                <option value="compliance-audit">Compliance Audit</option>
+                                <option value="incident-response">Incident Response</option>
+                                <option value="security-training">Security Training</option>
+                                <option value="vulnerability-assessment">Vulnerability Assessment</option>
+                                <option value="managed-security">Managed Security</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                            
+                            <label class="form-label" for="message">Security Requirements *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe your security needs, scope, compliance requirements, and any specific concerns..." required></textarea>
+                            
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="authorization" name="authorization" required>
+                                <label class="form-check-label" for="authorization">
+                                    I confirm this request is for legitimate security assessment purposes with proper authorization
+                                </label>
                             </div>
                             
-                            <div class="mb-4">
-                                <input type="email" class="form-control" id="businessEmail" placeholder="Business Email Address" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <select class="form-control" id="serviceInterest" required>
-                                    <option value="" disabled selected>Select Service Interest</option>
-                                    <option value="pentest">Penetration Testing & Assessment</option>
-                                    <option value="compliance">Compliance Auditing & Certification</option>
-                                    <option value="training">Security Training & Awareness</option>
-                                    <option value="managed">Managed Security Services</option>
-                                    <option value="consultation">General Security Consultation</option>
-                                </select>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <textarea class="form-control" id="requirements" rows="5" placeholder="Brief description of security requirements, scope, and compliance needs..." required></textarea>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="legalAgreement" required>
-                                    <label class="form-check-label" for="legalAgreement">
-                                        I confirm this request is for legitimate security assessment purposes with proper authorization and legal compliance
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <button type="button" class="btn btn-primary w-100 py-3" onclick="submitSecurityRequest()" style="font-size: 1.1rem; font-weight: 700;">
-                                SUBMIT SECURE REQUEST
+                            <button type="submit" class="submit-button">
+                                <i class="fas fa-paper-plane me-2"></i> SUBMIT SECURE REQUEST
                             </button>
-                        </div>
+                            
+                            <p class="text-center mt-3" style="color: var(--text-muted); font-size: 0.9rem;">
+                                <i class="fas fa-lock me-1"></i> All information is encrypted and confidential
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -803,70 +787,55 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4">
                     <div class="footer-logo">
                         <span>S4D</span> CYBER SECURITY
                     </div>
-                    <p style="font-size: 1.1rem; color: var(--text-muted);">
-                        Advanced Digital Protection Solutions<br>
-                        Professional Cybersecurity Consulting Services
-                    </p>
-                    <p class="mt-3">
-                        <i class="fas fa-map-marker-alt me-2" style="color: var(--secondary-color);"></i>
-                        <span class="highlight">Global Security Services</span>
+                    <p style="color: var(--text-muted);">
+                        Professional Cybersecurity Consulting<br>
+                        Advanced Digital Protection Solutions
                     </p>
                 </div>
                 
-                <div class="col-lg-2 col-md-4 mb-5">
-                    <h5>Services</h5>
-                    <div class="footer-links">
-                        <a href="#services">Security Assessments</a>
-                        <a href="#services">Compliance Auditing</a>
-                        <a href="#services">Incident Response</a>
-                        <a href="#services">Security Training</a>
-                        <a href="#services">Managed Services</a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-4 mb-5">
-                    <h5>Legal</h5>
-                    <div class="footer-links">
-                        <a href="terms-of-service.html">Terms of Service</a>
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                        <a href="acceptable-use.html">Acceptable Use</a>
-                        <a href="#contact">Contact Security</a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-4 mb-5">
-                    <h5>Professional Contact</h5>
-                    <p class="mb-3">
-                        <i class="fas fa-envelope me-3" style="color: var(--secondary-color);"></i>
-                        <a href="mailto:supports4dservices@protonmail.com" class="highlight">
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:supports4dservices@protonmail.com" style="color: var(--cyber-green);">
                             supports4dservices@protonmail.com
                         </a>
-                    </p>
-                    <p class="mb-3">
-                        <i class="fas fa-clock me-3" style="color: var(--secondary-color);"></i>
-                        <span class="highlight">Response: Within 24 Hours</span>
-                    </p>
-                    <p class="mb-3">
-                        <i class="fas fa-globe me-3" style="color: var(--secondary-color);"></i>
-                        <span class="highlight">Global Service Coverage</span>
-                    </p>
-                    <p class="mb-3">
-                        <i class="fas fa-shield-alt me-3" style="color: var(--secondary-color);"></i>
-                        <span class="highlight">ISO 27001 Certified</span>
-                    </p>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Response: Within 24 Hours</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Global Service Coverage</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="contact-info-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>ISO 27001 Certified</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Ethical & Legal Compliance</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Confidentiality Guaranteed</span>
+                    </div>
                 </div>
             </div>
             
             <div class="copyright">
-                <p style="font-size: 1.1rem;">
-                    © <span id="currentYear">2025</span> S4D Cyber Security Services. All rights reserved.<br>
-                    All services conducted within legal boundaries with proper authorization and compliance.<br>
-                    Professional cybersecurity consulting services only. Unauthorized testing strictly prohibited.
+                <p>
+                    © <span id="currentYear"></span> S4D Cyber Security Services. All rights reserved.<br>
+                    All services conducted within legal boundaries with proper authorization.<br>
+                    Professional cybersecurity consulting services only.
                 </p>
             </div>
         </div>
@@ -876,52 +845,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Simple form submission function
-        function submitSecurityRequest() {
-            const orgName = document.getElementById('organizationName').value;
-            const email = document.getElementById('businessEmail').value;
-            const serviceInterest = document.getElementById('serviceInterest').value;
-            const requirements = document.getElementById('requirements').value;
-            const legalAgreement = document.getElementById('legalAgreement');
-            
-            // Validation
-            if (!orgName || !email || !serviceInterest || !requirements) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            if (!legalAgreement.checked) {
-                alert('SECURITY COMPLIANCE REQUIRED: Please confirm that you have proper authorization for security assessment and legal compliance.');
-                return;
-            }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid business email address.');
-                return;
-            }
-            
-            // Show success message
-            const formContainer = document.getElementById('securityForm');
-            const successHTML = `
-                <div class="alert alert-success" style="background: linear-gradient(45deg, rgba(0,212,170,0.1), rgba(0,102,255,0.1)); border: 2px solid var(--secondary-color); color: var(--text-light); border-radius: 12px; padding: 2rem;">
-                    <h4 class="mb-3" style="color: var(--secondary-color);"><i class="fas fa-check-circle me-2"></i> Security Request Submitted</h4>
-                    <p>Thank you for your security assessment request for <strong>${orgName}</strong>.</p>
-                    <p>Our security team will contact you at <strong>${email}</strong> within <strong>24 hours</strong> to discuss your ${serviceInterest} requirements.</p>
-                    <p class="mt-3 mb-0"><em>All communications are encrypted and confidential.</em></p>
-                </div>
-            `;
-            
-            formContainer.innerHTML = successHTML;
-            formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 
@@ -935,82 +865,62 @@
                     
                     // Smooth scroll to target
                     window.scrollTo({
-                        top: targetElement.offsetTop - 90,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
-                    // Update active nav link
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
                 }
             });
         });
         
         // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate-on-scroll');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
                 }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Form submission success message
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Optional: Add form validation or success message
+                setTimeout(() => {
+                    const submitButton = this.querySelector('.submit-button');
+                    if (submitButton) {
+                        submitButton.innerHTML = '<i class="fas fa-check me-2"></i> REQUEST SENT';
+                        submitButton.style.background = 'linear-gradient(45deg, #00d4aa, #00a878)';
+                        submitButton.disabled = true;
+                    }
+                }, 100);
             });
         }
         
-        // Set initial state for animated elements
-        document.querySelectorAll('.animate-on-scroll').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        // Initialize all elements with fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
         });
         
-        // Update copyright year
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
-            const currentYear = new Date().getFullYear();
-            const yearElement = document.getElementById('currentYear');
-            if (yearElement) {
-                yearElement.textContent = currentYear;
-            }
-            
-            // Initial animation
-            setTimeout(animateOnScroll, 100);
-        });
-        
-        // Run animations on load and scroll
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.4)';
-                navbar.style.background = 'rgba(10, 25, 41, 0.98)';
-            } else {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-                navbar.style.background = 'rgba(10, 25, 41, 0.98)';
-            }
-        });
-        
-        // Form input focus effects
-        document.querySelectorAll('.form-control').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.style.borderColor = 'var(--primary-color)';
-                this.style.boxShadow = '0 0 0 4px rgba(0, 102, 255, 0.2)';
+        // Trigger initial animation
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
             });
-            
-            input.addEventListener('blur', function() {
-                this.style.borderColor = 'var(--border-color)';
-                this.style.boxShadow = 'none';
-            });
-        });
+        }, 100);
     </script>
 </body>
 </html>
