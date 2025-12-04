@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4D Cyber Services | Ethical Security Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <style>
+        body { 
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        header { 
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #00ff88;
+            box-shadow: 0 5px 25px rgba(0, 255, 136, 0.3);
+        }
+        .cyber-title {
+            color: #00ff88;
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+            font-weight: 800;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+        }
+        .tagline {
+            color: #4dabf7;
+            font-size: 1.3rem;
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+        nav {
+            background: rgba(10, 15, 25, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #00ff88;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-link-custom {
+            color: #00ff88 !important;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border-radius: 6px;
+            padding: 10px 20px !important;
+            border: 1px solid transparent;
+            text-decoration: none !important;
+        }
+        .nav-link-custom:hover {
+            background: rgba(0, 255, 136, 0.15);
+            border-color: #00ff88;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+        }
+        section {
+            background: rgba(20, 25, 40, 0.92);
+            border: 1px solid #2a3b5d;
+            border-radius: 12px;
+            padding: 35px;
+            margin: 35px auto;
+            max-width: 950px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+        section:hover {
+            transform: translateY(-8px);
+            border-color: #00ff88;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15);
+        }
+        h2 {
+            color: #00ff88;
+            border-bottom: 2px solid #00ff88;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::before {
+            font-size: 1.5rem;
+        }
+        .form-control {
+            background: #0a0f1a;
+            border: 1px solid #2a3b5d;
+            color: #00ff88;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            background: #111827;
+            border-color: #00ff88;
+            color: #fff;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+        .btn-cyber {
+            background: linear-gradient(45deg, #00b894, #00ff88);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            padding: 14px 30px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+        .btn-cyber:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.5);
+        }
+        .result-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .result-success { 
+            border-color: #00ff88; 
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.05);
+        }
+        .result-danger { 
+            border-color: #ff4757; 
+            color: #ff4757;
+            background: rgba(255, 71, 87, 0.05);
+        }
+        .result-warning { 
+            border-color: #ffa502; 
+            color: #ffa502;
+            background: rgba(255, 165, 2, 0.05);
+        }
+        .result-info { 
+            border-color: #4dabf7; 
+            color: #4dabf7;
+            background: rgba(77, 171, 247, 0.05);
+        }
+        ul { 
+            list-style: none;
+            padding-left: 0;
+        }
+        li { 
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: #b0c4ff;
+        }
+        li:before {
+            content: "▶";
+            color: #00ff88;
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        .disclaimer {
+            background: rgba(255, 71, 87, 0.1);
+            border-left: 5px solid #ff4757;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.95rem;
+        }
+        .tool-tag {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            color: #00ff88;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.85);
+            margin-top: 50px;
+            border-top: 2px solid #00ff88;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        .contact-info {
+            background: rgba(0, 255, 136, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .cyber-title { font-size: 2rem; }
+            section { padding: 25px; margin: 20px 15px; }
+            .nav-container { gap: 5px; }
+            .nav-link-custom { padding: 8px 15px !important; margin: 3px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="cyber-title">S4D CYBER SERVICES</h1>
+            <p class="tagline">Professional Ethical Cybersecurity & OSINT Intelligence</p>
+            <p style="color: #aaa; margin-top: 10px; font-size: 0.95rem;">
+                Kali Linux • Metasploit • Maltego • Nmap • Python • Burp Suite
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a class="nav-link-custom" href="#home">🏠 Home</a>
+                <a class="nav-link-custom" href="#pwned">🔍 Pwned Check</a>
+                <a class="nav-link-custom" href="#osint">🕵️ OSINT Intelligence</a>
+                <a class="nav-link-custom" href="#services">⚡ Services</a>
+                <a class="nav-link-custom" href="#contact">📞 Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>🔒 Welcome</h2>
+            <p>Welcome to <strong>S4D Cyber Services</strong>, your trusted partner for ethical cybersecurity solutions. We specialize in penetration testing, OSINT investigations, security automation, and vulnerability assessments.</p>
+            
+            <div class="disclaimer">
+                <strong>⚠️ ETHICAL DISCLAIMER:</strong> All services are conducted with explicit written permission from clients. 
+                We operate under strict legal and ethical guidelines. Unauthorized system access or testing is illegal and not condoned.
+                We are not responsible for misuse of information provided.
+            </div>
+            
+            <h3 style="color: #4dabf7; margin-top: 25px;">🛠️ Our Toolset</h3>
+            <div style="margin-top: 15px;">
+                <span class="tool-tag">Kali Linux</span>
+                <span class="tool-tag">Metasploit</span>
+                <span class="tool-tag">Maltego</span>
+                <span class="tool-tag">Nmap</span>
+                <span class="tool-tag">Burp Suite</span>
+                <span class="tool-tag">Python</span>
+                <span class="tool-tag">Bash Scripting</span>
+                <span class="tool-tag">Wireshark</span>
+                <span class="tool-tag">John the Ripper</span>
+                <span class="tool-tag">Hashcat</span>
+            </div>
+        </section>
+
+        <!-- HaveIBeenPwned Checker -->
+        <section id="pwned">
+            <h2>🔍 HaveIBeenPwned Checker</h2>
+            <p>Check if your email or username appears in known data breaches using the official HaveIBeenPwned API.</p>
+            
+            <form id="pwnedForm">
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" 
+                           placeholder="Enter email address" required
+                           style="font-size: 1.1rem;">
+                    <small style="color: #aaa; display: block; margin-top: 8px;">
+                        🔐 This check is secure. We don't store or log any email addresses.
+                    </small>
+                </div>
+                <button type="submit" class="btn-cyber">🔎 Check for Breaches</button>
+            </form>
+            
+            <div id="result" class="result-box result-info">
+                <div>Enter an email address above to check for breaches</div>
+            </div>
+            
+            <script>
+                document.getElementById('pwnedForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('email').value;
+                    const result = document.getElementById('result');
+                    
+                    // Input validation
+                    if (!email || !email.includes('@')) {
+                        result.className = 'result-box result-warning';
+                        result.innerHTML = '<div>⚠️ Please enter a valid email address</div>';
+                        return;
+                    }
+                    
+                    // Show loading state
+                    result.className = 'result-box result-info';
+                    result.innerHTML = '<div>🔍 Checking HaveIBeenPwned database...</div>';
+                    
+                    try {
+                        // Note: You need to get a FREE API key from https://haveibeenpwned.com/API/Key
+                        // Then replace 'YOUR_HIBP_API_KEY_HERE' with your actual key
+                        const apiKey = 'YOUR_HIBP_API_KEY_HERE'; // GET THIS FROM HIBP WEBSITE
+                        
+                        const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}?truncateResponse=false`, {
+                            headers: {
+                                'hibp-api-key': apiKey,
+                                'User-Agent': 'S4D-Cyber-Services'
+                            }
+                        });
+                        
+                        if (response.status === 404) {
+                            // No breaches found
+                            result.className = 'result-box result-success';
+                            result.innerHTML = `
+                                <div>
+                                    <h4 style="color: #00ff88;">✅ No Breaches Found!</h4>
+                                    <p style="margin-top: 10px; color: #aaa;">
+                                        Good news! No known data breaches found for <strong>${email}</strong>
+                                    </p>
+                                </div>
+                            `;
+                        } else if (response.status === 200) {
+                            // Breaches found
+                            const breaches = await response.json();
+                            result.className = 'result-box result-danger';
+                            result.innerHTML = `
+                                <div>
+                                    <h4 style="color: #ff4757;">🚨 BREACHES DETECTED!</h4>
+                                    <p><strong>${email}</strong> appears in <strong>${breaches.length}</strong> data breaches:</p>
+                                    <ul style="text-align: left; margin-top: 15px;">
+                                        ${breaches.slice(0, 5).map(b => `
+                                            <li style="margin-bottom: 8px;">
+                                                <strong>${b.Name}</strong> (${b.BreachDate || 'Date unknown'})<br>
+                                                <small style="color: #aaa;">${b.Description || 'No description available'}</small>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                    ${breaches.length > 5 ? `<p style="color: #ffa502;">+ ${breaches.length - 5} more breaches...</p>` : ''}
+                                    <p style="margin-top: 15px; font-size: 0.9rem; color: #aaa;">
+                                        💡 <strong>Recommendation:</strong> Change your password immediately and enable 2FA where possible.
+                                    </p>
+                                </div>
+                            `;
+                        } else if (response.status === 429) {
+                            // Rate limited
+                            result.className = 'result-box result-warning';
+                            result.innerHTML = '<div>⚠️ Rate limited. Please wait a moment and try again.</div>';
+                        } else if (response.status === 401) {
+                            // API key issue
+                            result.className = 'result-box result-warning';
+                            result.innerHTML = '<div>⚠️ API configuration needed. Please add your HIBP API key to the script.</div>';
+                        } else {
+                            // Other error
+                            result.className = 'result-box result-warning';
+                            result.innerHTML = `<div>⚠️ Error ${response.status}. Please try again later.</div>`;
+                        }
+                    } catch (err) {
+                        // Network error
+                        result.className = 'result-box result-warning';
+                        result.innerHTML = '<div>⚠️ Network error. Please check your connection and try again.</div>';
+                        console.error('HIBP Check Error:', err);
+                    }
+                });
+            </script>
+            
+            <div style="margin-top: 25px; padding: 15px; background: rgba(0, 0, 0, 0.3); border-radius: 8px;">
+                <small style="color: #aaa;">
+                    <strong>How to get your HIBP API Key:</strong><br>
+                    1. Go to <a href="https://haveibeenpwned.com/API/Key" target="_blank" style="color: #4dabf7;">https://haveibeenpwned.com/API/Key</a><br>
+                    2. Sign up for a free account<br>
+                    3. Get your API key (free for up to 1,500 requests/day)<br>
+                    4. Replace "YOUR_HIBP_API_KEY_HERE" in the script above
+                </small>
+            </div>
+        </section>
+
+        <!-- OSINT Intelligence Section -->
+        <section id="osint">
+            <h2>🕵️ OSINT Intelligence Services</h2>
+            <p>Professional Open Source Intelligence gathering for legitimate purposes:</p>
+            
+            <ul>
+                <li><strong>Email OSINT:</strong> Trace email origins, find associated accounts, verify legitimacy</li>
+                <li><strong>Social Media Intelligence:</strong> Profile analysis, connection mapping, activity patterns</li>
+                <li><strong>Domain Intelligence:</strong> WHOIS analysis, DNS records, subdomain enumeration</li>
+                <li><strong>Person Investigations:</strong> Digital footprint mapping (with legal consent)</li>
+                <li><strong>Corporate Intelligence:</strong> Employee discovery, technology stack analysis</li>
+            </ul>
+            
+            <div class="disclaimer">
+                <strong>🛡️ LEGAL REQUIREMENTS:</strong><br>
+                • Client must provide written permission for investigation<br>
+                • Subject must be aware of investigation OR investigation must be for own security audit<br>
+                • All investigations comply with local laws and GDPR/CCPA<br>
+                • Reports are for legitimate security assessment purposes only
+            </div>
+            
+            <h3 style="color: #4dabf7; margin-top: 25px;">💰 Pricing</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                <div style="background: rgba(0, 255, 136, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(0, 255, 136, 0.3);">
+                    <h4 style="color: #00ff88;">Basic Report</h4>
+                    <p style="font-size: 1.8rem; color: #fff; margin: 10px 0;">$50</p>
+                    <p>Email/username analysis</p>
+                    <p>Basic footprint report</p>
+                </div>
+                <div style="background: rgba(77, 171, 247, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(77, 171, 247, 0.3);">
+                    <h4 style="color: #4dabf7;">Standard Report</h4>
+                    <p style="font-size: 1.8rem; color: #fff; margin: 10px 0;">$100</p>
+                    <p>Comprehensive analysis</p>
+                    <p>Social media mapping</p>
+                    <p>Connection graph</p>
+                </div>
+                <div style="background: rgba(255, 71, 87, 0.1); padding: 15px; border-radius: 8px; border: 1px solid rgba(255, 71, 87, 0.3);">
+                    <h4 style="color: #ff4757;">Enterprise</h4>
+                    <p style="font-size: 1.8rem; color: #fff; margin: 10px 0;">$200+</p>
+                    <p>Full digital footprint</p>
+                    <p>Advanced correlation</p>
+                    <p>Maltego transforms</p>
+                    <p>Ongoing monitoring</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; color: #aaa;">
+                <strong>Delivery:</strong> Reports delivered as PDF + Maltego graph files (if applicable)<br>
+                <strong>Turnaround:</strong> 24-48 hours for standard requests<br>
+                <strong>Payment:</strong> PayPal, Cryptocurrency (BTC/ETH), or Bank Transfer
+            </p>
+        </section>
+
+        <!-- Other Services -->
+        <section id="services">
+            <h2>⚡ Additional Cybersecurity Services</h2>
+            
+            <h3 style="color: #4dabf7; margin-top: 20px;">🔓 Penetration Testing</h3>
+            <ul>
+                <li><strong>Network Penetration Testing:</strong> External/internal network assessment using Nmap, Metasploit, Nessus</li>
+                <li><strong>Web Application Testing:</strong> OWASP Top 10 vulnerabilities, Burp Suite, ZAP</li>
+                <li><strong>Mobile App Security:</strong> iOS/Android application testing, reverse engineering</li>
+                <li><strong>Wi-Fi Security Assessment:</strong> WPA2/WPA3 testing, rogue access point detection</li>
+                <li><strong>Social Engineering:</strong> Phishing simulation, awareness training (with permission)</li>
+            </ul>
+            
+            <h3 style="color: #4dabf7; margin-top: 25px;">🤖 Scripting & Automation</h3>
+            <ul>
+                <li><strong>Custom Security Scripts:</strong> Python/Bash automation for repetitive tasks</li>
+                <li><strong>Tool Development:</strong> Custom security tools tailored to your needs</li>
+                <li><strong>API Security Testing:</strong> REST/SOAP API vulnerability assessment</li>
+                <li><strong>Cloud Security:</strong> AWS/Azure/GCP security configuration review</li>
+                <li><strong>Incident Response:</strong> Automated response scripts, log analysis tools</li>
+            </ul>
+            
+            <h3 style="color: #4dabf7; margin-top: 25px;">🎯 Bug Bounty & Vulnerability Research</h3>
+            <ul>
+                <li>Private bug bounty program setup and management</li>
+                <li>Vulnerability discovery and responsible disclosure</li>
+                <li>CVE research and exploit development</li>
+                <li>Security advisory writing</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>📞 Contact S4D Cyber Services</h2>
+            
+            <div class="contact-info">
+                <h4 style="color: #00ff88;">📧 Primary Contact</h4>
+                <p style="font-size: 1.1rem; margin: 15px 0;">
+                    <strong>Email:</strong> suppports4dservices@protonmail.com<br>
+                    <strong>GitHub:</strong> <a href="https://github.com/s4dwinner" target="_blank" style="color: #4dabf7;">github.com/s4dwinner</a>
+                </p>
+                
+                <h4 style="color: #00ff88; margin-top: 25px;">⏱️ Response Time</h4>
+                <p>We typically respond within 24 hours for service inquiries.</p>
+                
+                <h4 style="color: #00ff88; margin-top: 25px;">🔒 Secure Communication</h4>
+                <p>For sensitive information, please request PGP key for encrypted communication.</p>
+            </div>
+            
+            <h3 style="color: #4dabf7; margin-top: 30px;">📋 Service Inquiry Form</h3>
+            <form id="contactForm" action="mailto:contact4hmed@yahoo.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select name="service" class="form-control" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="osint">OSINT Intelligence</option>
+                        <option value="pentest">Penetration Testing</option>
+                        <option value="scripting">Scripting/Automation</option>
+                        <option value="consulting">Security Consulting</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" rows="5" 
+                              placeholder="Describe your requirements, including target/scope and legal permissions..." 
+                              required></textarea>
+                </div>
+                <div class="form-group">
+                    <div style="background: rgba(255, 71, 87, 0.1); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent" style="color: #aaa; margin-left: 10px;">
+                            I confirm I have legal permission for the requested service and understand the ethical guidelines
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn-cyber">📤 Send Inquiry</button>
+            </form>
+            
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    const consent = document.getElementById('consent');
+                    if (!consent.checked) {
+                        e.preventDefault();
+                        alert('⚠️ You must confirm you have legal permission before submitting.');
+                        return false;
+                    }
+                    
+                    // Add a small delay to show message
+                    const btn = this.querySelector('.btn-cyber');
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '⏳ Sending...';
+                    btn.disabled = true;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                        alert('✅ Inquiry ready! Your email client will open to send the message.');
+                    }, 1000);
+                });
+            </script>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 S4D Cyber Services | Ethical Cybersecurity Solutions</p>
+            <p style="color: #777; margin-top: 10px; font-size: 0.85rem;">
+                Kali Linux • Metasploit • Maltego • Nmap • Python • Burp Suite • Wireshark<br>
+                All services require client permission. Unauthorized testing is illegal.
+            </p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/s4dwinner/S4D-CS-Services" target="_blank" 
+                   style="color: #4dabf7; text-decoration: none;">
+                   View this site on GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth scrolling for navigation -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to current section in nav
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link-custom');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                    link.style.background = 'rgba(0, 255, 136, 0.2)';
+                } else {
+                    link.style.background = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
