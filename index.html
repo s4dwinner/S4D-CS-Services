@@ -1,343 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="S4D Cyber Security | Authorized Penetration Testing, Red Team Operations, Compliance Audits & Incident Response. Legal. Ethical. Elite.">
-    <meta name="keywords" content="penetration testing, red team, ethical hacking, vulnerability assessment, GDPR, ISO27001, incident response, cybersecurity">
-    <meta name="author" content="S4D Cyber Security">
-    <meta name="theme-color" content="#0066ff">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="S4D Cyber Security – Professional Penetration Testing, Red Team Operations & Compliance Services. Fully Authorized. Globally Trusted."/>
+  <title>S4D Cyber Security | Authorized Offensive Security Services</title>
 
-    <title>S4D Cyber Security | Authorized Offensive Security & Defense</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 
-    <!-- Favicons (add these files or use real ones) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Shield</text></svg>">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --discord-blurple: #5865f2;
+      --discord-dark: #1e1f22;
+      --discord-darker: #111214;
+      --cyber-blue: #00d4ff;
+      --glass-bg: rgba(30, 31, 34, 0.65);
+      --glass-border: rgba(88, 101, 242, 0.25);
+      --text: #ffffff;
+      --text-muted: #b5bac1;
+      --success: #00ff9d;
+    }
 
-    <!-- Bootstrap 5.3 + Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f14 0%, #14151a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-    <style>
-        :root {
-            --primary: #00eaff;
-            --secondary: #00ff9d;
-            --danger: #ff3366;
-            --dark: #0d0d1e;
-            --darker: #080812;
-            --card: #121225;
-            --text: #e0e7ff;
-            --muted: #94a3b8;
-            --border: #1e293b;
-        }
+    /* Glassmorphism Cards */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+    }
+    .glass:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(88, 101, 242, 0.25);
+      border-color: var(--discord-blurple);
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    /* Navbar */
+    nav {
+      background: rgba(17, 18, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(88, 101, 242, 0.2);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.7rem;
+      color: white;
+    }
+    .logo span { color: var(--discord-blurple); }
 
-        /* Glitch Text Effect */
-        .glitch {
-            position: relative;
-            color: var(--primary);
-            font-family: 'Orbitron', monospace;
-        }
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0.8;
-        }
-        .glitch::before { animation: glitch-1 0.5s infinite; color: #ff3366; left: 2px; text-shadow: -2px 0 #00ff9d; clip: rect(44px, 450px, 56px, 0); }
-        .glitch::after { animation: glitch-2 0.7s infinite; color: #00ff9d; left: -2px; text-shadow: 2px 0 #ff3366; clip: rect(44px, 450px, 56px, 0); }
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 70%, rgba(88,101,242,0.15), transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0,212,255,0.1), transparent 50%);
+      pointer-events: none;
+    }
 
-        @keyframes glitch-1 { 0%,100%{clip:rect(44px,450px,56px,0)} 20%{clip:rect(91px,450px,100px,0)} 40%{clip:rect(22px,450px,80px,0)} }
-        @keyframes glitch-2 { 0%,100%{clip:rect(33px,450px,87px,0)} 30%{clip:rect(67px,450px,111px,0)} 60%{clip:rect(10px,450px,50px,0)} }
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff, var(--discord-blurple), var(--cyber-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-        /* Navbar */
-        .navbar {
-            background: rgba(13, 13, 30, 0.95) !important;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--primary);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .logo {
-            font-family: 'Orbitron', monospace;
-            font-weight: 900;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-        .logo span { color: var(--secondary); }
+    /* Buttons */
+    .btn-primary {
+      background: var(--discord-blurple);
+      border: none;
+      padding: 14px 36px;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 25px rgba(88,101,242,0.4);
+    }
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(88,101,242,0.6);
+      background: #4752c4;
+    }
 
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%2300eaff11" points="0,1000 1000,800 1000,1000"/></svg>') repeat;
-            opacity: 0.03;
-        }
+    /* Form Styling */
+    .form-control, .form-select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 14px;
+      padding: 14px 18px;
+      transition: all 0.3s;
+    }
+    .form-control:focus, .form-select:focus {
+      background: rgba(88,101,242,0.15);
+      border-color: var(--discord-blurple);
+      box-shadow: 0 0 0 4px rgba(88,101,242,0.25);
+      color: white;
+    }
+    ::placeholder { color: #8b949e; }
 
-        .hero h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-        }
-        @media (max-width: 992px) { .hero h1 { font-size: 3.5rem; } }
-        @media (max-width: 576px) { .hero h1 { font-size: 2.8rem; } }
-
-        .badge-trust {
-            background: rgba(0, 234, 255, 0.15);
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Cards */
-        .service-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 234, 255, 0.15);
-        }
-        .service-card i {
-            font-size: 3.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Form */
-        .form-control, .form-select {
-            background: rgba(255,255,255,0.04) !important;
-            border: 1px solid var(--border) !important;
-            color: var(--text) !important;
-            border-radius: 12px !important;
-            padding: 14px 18px !important;
-        }
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary) !important;
-            box-shadow: 0 0 0 4px rgba(0, 234, 255, 0.2) !important;
-            background: rgba(0, 234, 255, 0.08) !important;
-        }
-        .btn-cta {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none;
-            padding: 16px 40px;
-            font-weight: 700;
-            border-radius: 12px;
-            transition: all 0.3s;
-        }
-        .btn-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 234, 255, 0.4);
-        }
-
-        /* Legal Warning Box */
-        .legal-box {
-            background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(0,234,255,0.05));
-            border: 2px solid var(--danger);
-            border-radius: 16px;
-            padding: 2.5rem;
-        }
-
-        footer a { color: var(--secondary); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-    </style>
+    /* Trust Badges */
+    .badge-trust {
+      background: rgba(88,101,242,0.15);
+      color: var(--discord-blurple);
+      border: 1px solid rgba(88,101,242,0.3);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-3">
-                <div style="width:50px;height:50px;background:linear-gradient(45deg,var(--primary),var(--secondary));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:1.4rem;">S4D</div>
-                <div>
-                    <div class="logo">S4D <span>CYBER</span></div>
-                    <small class="text-muted">Offensive Security Division</small>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
+  <!-- Navbar -->
+  <nav>
+    <div class="container d-flex justify-content-between align-items-center" style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
+      <a href="#" class="logo">S4D <span>CYBER</span></a>
+      <div>
+        <a href="#contact" class="btn btn-primary">Request Assessment</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" class="text-center text-lg-start">
+    <div class="container" style="max-width: 1100px;">
+      <div class="text-center py-5">
+        <h1 class="display-3 mb-4">S4D Cyber Security</h1>
+        <p class="lead fs-2 mb-4" style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+          Professional Penetration Testing<br>Red Team Operations • Compliance Audits • Incident Response
+        </p>
+        <p class="fs-5 mb-5" style="color: #b5bac1;">
+          Authorized Only • Global Reach • Certified Experts
+        </p>
+
+        <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
+          <span class="badge-trust">ISO 27001 Certified</span>
+          <span class="badge-trust">CREST Member Standards</span>
+          <span class="badge-trust">OSCP • CISSP • CRT</span>
+          <span class="badge-trust">100% Legal Compliance</span>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-lg">Request Authorized Security Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Form Section -->
+  <section id="contact" class="py-5">
+    <div class="container" style="max-width: 900px;">
+      <div class="glass">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Request Security Assessment</h2>
+          <p class="text-muted">All submissions are encrypted • Response within 24 hours</p>
+        </div>
+
+        <!-- YOUR FORMSPREE FORM – CLEAN & MODERN -->
+        <form action="https://formspree.io/f/xdkqderg" method="POST" class="row g-4">
+          <div class="col-md-6">
+            <label class="form-label text-light">Organization Name *</label>
+            <input type="text" name="organization" class="form-control" placeholder="Acme Corp" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label text-light">Your Email *</label>
+            <input type="email" name="email" class="form-control" placeholder="you@company.com" required />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label text-light">Phone (Optional)</label>
+            <input type="tel" name="phone" class="form-control" placeholder="+1 (555) 000-0000" />
+          </div>
+
+          <div class="col-12">
+            <label class="form-label text-light">Service Needed *</label>
+            <select name="service" class="form-select" required>
+              <option value="" disabled selected>Choose a service...</option>
+              <option>Penetration Testing</option>
+              <option>Red Team Engagement</option>
+              <option>Compliance Audit (GDPR, ISO, PCI)</option>
+              <option>Incident Response Retainer</option>
+              <option>Vulnerability Assessment</option>
+              <option>Security Consultation</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label text-light">Scope & Message *</label>
+            <textarea name="message" rows="6" class="form-control" placeholder="Describe your needs, targets, compliance requirements, timeline..." required></textarea>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="auth" required />
+              <label class="form-check-label text-light" for="auth">
+                I confirm this request is legitimate and I have proper authorization to request testing
+              </label>
+            </div>
+          </div>
+
+          <!-- Anti-spam honeypot -->
+          <div style="position:absolute; left:-9999px;">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
+              Submit Secure Request
             </button>
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto gap-3">
-                    <li><a class="nav-link" href="#home">HOME</a></li>
-                    <li><a class="nav-link" href="#services">SERVICES</a></li>
-                    <li><a class="nav-link" href="#legal">LEGAL</a></li>
-                    <li><a class="nav-link" href="#contact">CONTACT</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Hero -->
-    <section id="home" class="hero text-center text-lg-start">
-        <div class="container position-relative" style="z-index:2;padding-top:120px;">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="glitch mb-4" data-text="S4D CYBER SECURITY">S4D CYBER SECURITY</h1>
-                    <p class="lead fs-3 mb-4 text-muted">Authorized Red Team Operations • Penetration Testing • Incident Response<br>100% Legal • 100% Ethical • 100% Elite</p>
-                    <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-                        <span class="badge-trust">CREST Accredited</span>
-                        <span class="badge-trust">ISO 27001 Certified</span>
-                        <span class="badge-trust">OSCP | CEH | CRT</span>
-                        <span class="badge-trust">24/7 Response</span>
-                    </div>
-                    <a href="#contact" class="btn btn-cta btn-lg">REQUEST AUTHORIZED ASSESSMENT</a>
-                </div>
-            </div>
-        </div>
-    </section>
+          <div class="col-12 text-center mt-4">
+            <small class="text-muted">
+              End-to-end encrypted • No logs • GDPR compliant<br>
+              Email: <a href="mailto:supports4dservices@protonmail.com" style="color: var(--discord-blurple);">supports4dservices@protonmail.com</a>
+            </small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="text-center display-4 fw-bold mb-5">Core Services</h2>
-            <div class="row g-4">
-                <!-- Repeat this block for each service -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card text-center text-md-start">
-                        <i class="fas fa-bug mb-4"></i>
-                        <h3>Penetration Testing</h3>
-                        <p>Web • Network • Cloud • Mobile • API • Red Team Simulations</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card text-center text-md-start">
-                        <i class="fas fa-shield-alt mb-4"></i>
-                        <h3>Compliance & Audits</h3>
-                        <p>GDPR • ISO 27001 • PCI-DSS • SOC 2 • NIST</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card text-center text-md-start">
-                        <i class="fas fa-siren-on mb-4"></i>
-                        <h3>Incident Response</h3>
-                        <p>24/7 IR Retainer • Digital Forensics • Recovery</p>
-                    </div>
-                </div>
-                <!-- Add more as needed -->
-            </div>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer class="text-center py-5" style="border-top: 1px solid rgba(88,101,242,0.2);">
+    <div class="container">
+      <p class="mb-0" style="color: var(--text-muted);">
+        © 2025 S4D Cyber Security • Professional Services Only • All engagements require signed authorization
+      </p>
+    </div>
+  </footer>
 
-    <!-- Legal Notice -->
-    <section id="legal" class="py-5">
-        <div class="container">
-            <div class="legal-box text-center">
-                <h2 class="text-danger mb-4">LEGAL & ETHICAL OPERATIONS ONLY</h2>
-                <p class="lead">All engagements require signed Rules of Engagement and written authorization.<br>
-                We do not perform unsolicited testing. Unauthorized requests will be reported.</p>
-                <div class="row mt-5">
-                    <div class="col-6 col-md-3"><i class="fas fa-file-contract fa-3x text-danger mb-3"></i><br>RoE Required</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-gavel fa-3x text-danger mb-3"></i><br>Full Legal Compliance</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-user-secret fa-3x text-danger mb-3"></i><br>Ethical Standards</div>
-                    <div class="col-6 col-md-3"><i class="fas fa-lock fa-3x text-danger mb-3"></i><br>Confidentiality Guaranteed</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section id="contact" class="py-5 bg-black">
-        <div class="container">
-            <h2 class="text-center display-5 fw-bold mb-5">Request Authorized Security Assessment</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="service-card p-5">
-                        <form action="https://formspree.io/f/xdkqderg" method="POST" class="contact-form">
-                            <input type="hidden" name="_subject" value="[S4D] New Authorized Assessment Request">
-                            <div class="row">
-                                <div class="col-md-6 mb-4">
-                                    <label>Organization *</label>
-                                    <input type="text" name="organization" class="form-control" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label>Business Email *</label>
-                                    <input type="email" name="_replyto" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label>Phone (Optional)</label>
-                                <input type="tel" name="phone" class="form-control">
-                            </div>
-                            <div class="mb-4">
-                                <label>Service Required *</label>
-                                <select name="service" class="form-select" required>
-                                    <option value="" disabled selected>Select service...</option>
-                                    <option>Penetration Testing</option>
-                                    <option>Red Team Engagement</option>
-                                    <option>Compliance Audit</option>
-                                    <option>Incident Response</option>
-                                    <option>Vulnerability Assessment</option>
-                                    <option>Consultation</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label>Scope & Requirements *</label>
-                                <textarea name="message" rows="5" class="form-control" placeholder="IP ranges, domains, compliance needs, timeline..." required></textarea>
-                            </div>
-                            <div class="form-check mb-4">
-                                <input type="checkbox" class="form-check-input" id="auth" required>
-                                <label class="form-check-label" for="auth">
-                                    I confirm this request is legitimate and I have proper authorization
-                                </label>
-                            </div>
-                            <!-- Anti-spam honeypot -->
-                            <div style="position:absolute;left:-9999px;"><input type="text" name="_gotcha"></div>
-
-                            <button type="submit" class="btn btn-cta w-100">SUBMIT SECURE REQUEST</button>
-                            <p class="text-center mt-3 text-muted small">
-                                <i class="fas fa-lock"></i> End-to-end encrypted • No data stored • GDPR compliant
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-5 text-center text-muted">
-        <div class="container">
-            <p>© 2025 S4D Cyber Security • All services performed under signed authorization only.<br>
-            <a href="mailto:supports4dservices@protonmail.com">supports4dservices@protonmail.com</a></p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
