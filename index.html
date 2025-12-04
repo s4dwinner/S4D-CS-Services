@@ -1,264 +1,1218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="S4D Cyber Security – Professional Penetration Testing, Red Team Operations & Compliance Services. Fully Authorized. Globally Trusted."/>
-  <title>S4D Cyber Security | Authorized Offensive Security Services</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-
-  <style>
-    :root {
-      --discord-blurple: #5865f2;
-      --discord-dark: #1e1f22;
-      --discord-darker: #111214;
-      --cyber-blue: #00d4ff;
-      --glass-bg: rgba(30, 31, 34, 0.65);
-      --glass-border: rgba(88, 101, 242, 0.25);
-      --text: #ffffff;
-      --text-muted: #b5bac1;
-      --success: #00ff9d;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #0f0f14 0%, #14151a 100%);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* Glassmorphism Cards */
-    .glass {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 20px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      padding: 2.5rem;
-      transition: all 0.4s ease;
-    }
-    .glass:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(88, 101, 242, 0.25);
-      border-color: var(--discord-blurple);
-    }
-
-    /* Navbar */
-    nav {
-      background: rgba(17, 18, 20, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(88, 101, 242, 0.2);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.7rem;
-      color: white;
-    }
-    .logo span { color: var(--discord-blurple); }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 100px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 70%, rgba(88,101,242,0.15), transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(0,212,255,0.1), transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero h1 {
-      font-size: 4.2rem;
-      font-weight: 800;
-      background: linear-gradient(90deg, #ffffff, var(--discord-blurple), var(--cyber-blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Buttons */
-    .btn-primary {
-      background: var(--discord-blurple);
-      border: none;
-      padding: 14px 36px;
-      font-weight: 600;
-      border-radius: 12px;
-      transition: all 0.3s;
-      box-shadow: 0 8px 25px rgba(88,101,242,0.4);
-    }
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(88,101,242,0.6);
-      background: #4752c4;
-    }
-
-    /* Form Styling */
-    .form-control, .form-select {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 14px;
-      padding: 14px 18px;
-      transition: all 0.3s;
-    }
-    .form-control:focus, .form-select:focus {
-      background: rgba(88,101,242,0.15);
-      border-color: var(--discord-blurple);
-      box-shadow: 0 0 0 4px rgba(88,101,242,0.25);
-      color: white;
-    }
-    ::placeholder { color: #8b949e; }
-
-    /* Trust Badges */
-    .badge-trust {
-      background: rgba(88,101,242,0.15);
-      color: var(--discord-blurple);
-      border: 1px solid rgba(88,101,242,0.3);
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 500;
-      backdrop-filter: blur(10px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4D Cyber Security | Enterprise Threat Intelligence & Defense</title>
+    <meta name="description" content="Advanced cybersecurity solutions for Fortune 500 enterprises. Professional penetration testing, threat intelligence, and compliance auditing with full legal authorization.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #5865F2;
+            --primary-dark: #4752C4;
+            --accent: #00eaff;
+            --accent-glow: rgba(0, 234, 255, 0.15);
+            --black: #0d0e12;
+            --dark-gray: #1a1b23;
+            --light-gray: #f8f9fa;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(26, 27, 35, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b7c3;
+            --success: #00d4aa;
+            --warning: #ff6b35;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--black);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .jetbrains {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+        
+        /* ===== LAYOUT & CONTAINERS ===== */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 14, 18, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: white;
+            box-shadow: 0 4px 20px rgba(88, 101, 242, 0.3);
+        }
+        
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.2px;
+            transition: var(--transition);
+            position: relative;
+            padding: 6px 0;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 992px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--dark-gray);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                border-bottom: 1px solid var(--border);
+                backdrop-filter: blur(20px);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(88, 101, 242, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 234, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(13, 14, 18, 0.9) 0%, var(--black) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(88, 101, 242, 0.1);
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            border-radius: 100px;
+            padding: 8px 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(88, 101, 242, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(88, 101, 242, 0.4);
+        }
+        
+        .cta-button.accent {
+            background: linear-gradient(135deg, var(--accent), #00b8cc);
+            box-shadow: 0 8px 30px rgba(0, 234, 255, 0.3);
+        }
+        
+        .cta-button.accent:hover {
+            box-shadow: 0 12px 40px rgba(0, 234, 255, 0.4);
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 80px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 140px;
+                padding-bottom: 60px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-top: 60px;
+            }
+        }
+        
+        /* ===== GLASSMORPHIC CARDS ===== */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* ===== SERVICES SECTION ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background: rgba(88, 101, 242, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(88, 101, 242, 0.2);
+        }
+        
+        /* ===== LEGAL NOTICE ===== */
+        .legal-notice {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(88, 101, 242, 0.05));
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 1000px;
+            text-align: center;
+        }
+        
+        .legal-icon {
+            font-size: 2.5rem;
+            color: var(--warning);
+            margin-bottom: 20px;
+        }
+        
+        .legal-notice h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--warning);
+        }
+        
+        .legal-notice p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .legal-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .legal-point {
+            text-align: center;
+        }
+        
+        .legal-point i {
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+        
+        /* ===== CONTACT FORM ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(88, 101, 242, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+        
+        .contact-details p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .badge i {
+            color: var(--success);
+        }
+        
+        /* FORM STYLES */
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .form-check-input {
+            margin-top: 4px;
+            accent-color: var(--primary);
+        }
+        
+        .form-check-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .form-check-label a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+        
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark-gray);
+            padding: 80px 0 40px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .footer-tagline {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+        
+        /* ===== UTILITIES ===== */
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav>
-    <div class="container d-flex justify-content-between align-items-center" style="max-width: 1300px; margin: 0 auto; padding: 0 2rem;">
-      <a href="#" class="logo">S4D <span>CYBER</span></a>
-      <div>
-        <a href="#contact" class="btn btn-primary">Request Assessment</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero" class="text-center text-lg-start">
-    <div class="container" style="max-width: 1100px;">
-      <div class="text-center py-5">
-        <h1 class="display-3 mb-4">S4D Cyber Security</h1>
-        <p class="lead fs-2 mb-4" style="color: var(--text-muted); max-width: 800px; margin: 0 auto;">
-          Professional Penetration Testing<br>Red Team Operations • Compliance Audits • Incident Response
-        </p>
-        <p class="fs-5 mb-5" style="color: #b5bac1;">
-          Authorized Only • Global Reach • Certified Experts
-        </p>
-
-        <div class="d-flex flex-wrap gap-3 justify-content-center mb-5">
-          <span class="badge-trust">ISO 27001 Certified</span>
-          <span class="badge-trust">CREST Member Standards</span>
-          <span class="badge-trust">OSCP • CISSP • CRT</span>
-          <span class="badge-trust">100% Legal Compliance</span>
-        </div>
-
-        <a href="#contact" class="btn btn-primary btn-lg">Request Authorized Security Assessment</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Form Section -->
-  <section id="contact" class="py-5">
-    <div class="container" style="max-width: 900px;">
-      <div class="glass">
-        <div class="text-center mb-5">
-          <h2 class="display-5 fw-bold">Request Security Assessment</h2>
-          <p class="text-muted">All submissions are encrypted • Response within 24 hours</p>
-        </div>
-
-        <!-- YOUR FORMSPREE FORM – CLEAN & MODERN -->
-        <form action="https://formspree.io/f/xdkqderg" method="POST" class="row g-4">
-          <div class="col-md-6">
-            <label class="form-label text-light">Organization Name *</label>
-            <input type="text" name="organization" class="form-control" placeholder="Acme Corp" required />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label text-light">Your Email *</label>
-            <input type="email" name="email" class="form-control" placeholder="you@company.com" required />
-          </div>
-
-          <div class="col-12">
-            <label class="form-label text-light">Phone (Optional)</label>
-            <input type="tel" name="phone" class="form-control" placeholder="+1 (555) 000-0000" />
-          </div>
-
-          <div class="col-12">
-            <label class="form-label text-light">Service Needed *</label>
-            <select name="service" class="form-select" required>
-              <option value="" disabled selected>Choose a service...</option>
-              <option>Penetration Testing</option>
-              <option>Red Team Engagement</option>
-              <option>Compliance Audit (GDPR, ISO, PCI)</option>
-              <option>Incident Response Retainer</option>
-              <option>Vulnerability Assessment</option>
-              <option>Security Consultation</option>
-            </select>
-          </div>
-
-          <div class="col-12">
-            <label class="form-label text-light">Scope & Message *</label>
-            <textarea name="message" rows="6" class="form-control" placeholder="Describe your needs, targets, compliance requirements, timeline..." required></textarea>
-          </div>
-
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="auth" required />
-              <label class="form-check-label text-light" for="auth">
-                I confirm this request is legitimate and I have proper authorization to request testing
-              </label>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">S4D</div>
+                <div class="logo-text">CYBER <span>SECURITY</span></div>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#legal" class="nav-link">Compliance</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="terms-of-service.html" class="nav-link">Legal</a>
             </div>
-          </div>
-
-          <!-- Anti-spam honeypot -->
-          <div style="position:absolute; left:-9999px;">
-            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <div class="col-12 text-center">
-            <button type="submit" class="btn btn-primary btn-lg px-5">
-              Submit Secure Request
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
             </button>
-          </div>
+        </div>
+    </nav>
 
-          <div class="col-12 text-center mt-4">
-            <small class="text-muted">
-              End-to-end encrypted • No logs • GDPR compliant<br>
-              Email: <a href="mailto:supports4dservices@protonmail.com" style="color: var(--discord-blurple);">supports4dservices@protonmail.com</a>
-            </small>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-check"></i>
+                    CREST-Accredited Security Testing
+                </div>
+                
+                <h1 class="hero-title">Enterprise Threat Intelligence<br>& Defense Solutions</h1>
+                
+                <p class="hero-subtitle">
+                    Advanced cybersecurity services for global enterprises. Professional penetration testing, 
+                    compliance auditing, and threat intelligence with full legal authorization and industry-leading methodology.
+                </p>
+                
+                <a href="#contact" class="cta-button accent">
+                    <i class="fas fa-headset"></i>
+                    Request Security Assessment
+                </a>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Monitoring</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">ISO</div>
+                        <div class="stat-label">27001 Certified</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Legal Compliance</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">0-Day</div>
+                        <div class="stat-label">Vulnerability Research</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-5" style="border-top: 1px solid rgba(88,101,242,0.2);">
-    <div class="container">
-      <p class="mb-0" style="color: var(--text-muted);">
-        © 2025 S4D Cyber Security • Professional Services Only • All engagements require signed authorization
-      </p>
-    </div>
-  </footer>
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Advanced Security Services</h2>
+                <p>Comprehensive cybersecurity solutions designed for enterprise-scale protection and compliance</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="glass-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Penetration Testing</h3>
+                    <p class="service-description">
+                        Comprehensive security assessments targeting network infrastructure, web applications, 
+                        and cloud environments with full authorization and detailed reporting.
+                    </p>
+                    <div class="service-tags">
+                        <span class="tag">Web Apps</span>
+                        <span class="tag">Network</span>
+                        <span class="tag">Cloud</span>
+                        <span class="tag">Mobile</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-file-shield"></i>
+                    </div>
+                    <h3 class="service-title">Compliance Auditing</h3>
+                    <p class="service-description">
+                        GDPR, ISO 27001, PCI DSS, and SOC 2 compliance assessments with detailed gap analysis 
+                        and remediation roadmaps for regulatory requirements.
+                    </p>
+                    <div class="service-tags">
+                        <span class="tag">GDPR</span>
+                        <span class="tag">ISO 27001</span>
+                        <span class="tag">PCI DSS</span>
+                        <span class="tag">SOC 2</span>
+                    </div>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="service-title">Vulnerability Management</h3>
+                    <p class="service-description">
+                        Continuous vulnerability assessment and management programs with prioritized remediation 
+                        guidance and executive-level risk reporting.
+                    </p>
+                    <div class="service-tags">
+                        <span class="tag">SAST/DAST</span>
+                        <span class="tag">SCA</span>
+                        <span class="tag">Risk Scoring</span>
+                        <span class="tag">Remediation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Legal Notice -->
+    <section id="legal" class="section">
+        <div class="container">
+            <div class="legal-notice fade-in">
+                <div class="legal-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3>Legal & Ethical Compliance</h3>
+                <p>
+                    All security assessments are conducted with explicit written authorization from system owners. 
+                    We operate under strict legal and ethical guidelines, with full compliance to international 
+                    cybersecurity laws and regulations.
+                </p>
+                
+                <div class="legal-points">
+                    <div class="legal-point">
+                        <i class="fas fa-file-signature"></i>
+                        <p>Written Authorization Required</p>
+                    </div>
+                    <div class="legal-point">
+                        <i class="fas fa-balance-scale"></i>
+                        <p>Full Legal Compliance</p>
+                    </div>
+                    <div class="legal-point">
+                        <i class="fas fa-user-shield"></i>
+                        <p>Ethical Guidelines Adherence</p>
+                    </div>
+                    <div class="legal-point">
+                        <i class="fas fa-lock"></i>
+                        <p>Confidentiality Guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact Security Team</h2>
+                <p>Request a professional security assessment or consultation with our expert team</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info fade-in">
+                    <div class="glass-card">
+                        <h3 style="margin-bottom: 24px; color: var(--text-primary);">Professional Contact</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <p>supports4dservices@protonmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Response Time</h4>
+                                <p>24-48 hours for professional inquiries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Service Coverage</h4>
+                                <p>Global cybersecurity services and support</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-badges">
+                            <div class="badge">
+                                <i class="fas fa-check-circle"></i>
+                                ISO 27001
+                            </div>
+                            <div class="badge">
+                                <i class="fas fa-check-circle"></i>
+                                CREST-aligned
+                            </div>
+                            <div class="badge">
+                                <i class="fas fa-check-circle"></i>
+                                OSCP Certified
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="glass-card fade-in">
+                    <h3 style="margin-bottom: 30px; color: var(--text-primary);">Request Security Assessment</h3>
+                    
+                    <form action="https://formspree.io/f/xdkqderg" method="POST" id="securityForm">
+                        <!-- Honeypot field -->
+                        <input type="text" name="_gotcha" class="honeypot" tabindex="-1">
+                        
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="_subject" value="New Security Assessment Request - S4D Cyber">
+                        <input type="hidden" name="_replyto" value="supports4dservices@protonmail.com">
+                        
+                        <div class="form-group">
+                            <label for="organization" class="form-label">Organization Name *</label>
+                            <input type="text" id="organization" name="organization" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Business Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Needed *</label>
+                            <select id="service" name="service" class="form-select" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="penetration-testing">Penetration Testing</option>
+                                <option value="compliance-audit">Compliance Audit</option>
+                                <option value="incident-response">Incident Response</option>
+                                <option value="security-training">Security Training</option>
+                                <option value="vulnerability-assessment">Vulnerability Assessment</option>
+                                <option value="managed-security">Managed Security</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Scope & Requirements *</label>
+                            <textarea id="message" name="message" class="form-textarea" 
+                                      placeholder="Describe your security needs, scope, compliance requirements, and any specific concerns..." 
+                                      required></textarea>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="authorization" name="authorization" class="form-check-input" required>
+                            <label for="authorization" class="form-check-label">
+                                I confirm this request is for legitimate security assessment purposes with proper authorization. 
+                                I understand that all services require written authorization and comply with applicable laws.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button accent" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i>
+                            SUBMIT SECURE REQUEST
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">S4D <span>CYBER</span></div>
+                    <p class="footer-tagline">
+                        Advanced cybersecurity solutions for enterprise organizations. 
+                        Professional services with full legal compliance and authorization.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Penetration Testing</a></li>
+                            <li><a href="#services">Compliance Auditing</a></li>
+                            <li><a href="#services">Incident Response</a></li>
+                            <li><a href="#services">Security Training</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="acceptable-use.html">Acceptable Use</a></li>
+                            <li><a href="#legal">Compliance</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="#contact">Request Assessment</a></li>
+                            <li><a href="mailto:supports4dservices@protonmail.com">Email Support</a></li>
+                            <li><a href="#legal">Legal Compliance</a></li>
+                            <li><a href="#contact">Consultation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> S4D Cyber Security Services. All rights reserved.</p>
+                <p>All services conducted within legal boundaries with proper authorization. Professional cybersecurity consulting only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Initial check
+        fadeInOnScroll();
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Form submission
+        const securityForm = document.getElementById('securityForm');
+        if (securityForm) {
+            securityForm.addEventListener('submit', async (e) => {
+                const submitBtn = securityForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                
+                // Visual feedback
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Form will submit normally to Formspree
+                // Success/error handling would be added via Formspree's JS library if needed
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger initial animations
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+    </script>
 </body>
 </html>
