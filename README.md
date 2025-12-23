@@ -1,20 +1,23 @@
-# S4D Cyber Security Services
+# S4D Cyber Security
 
-Professional cybersecurity consulting and penetration testing services.
+**Enterprise Threat Intelligence & Defense Solutions**
 
-## Live Website
-🌐 https://s4dcyber.vercel.app
+Advanced cybersecurity services for global enterprises. We deliver professional penetration testing, compliance auditing, vulnerability management, and real-time threat intelligence — all with full legal authorization and industry-leading methodologies.
 
-## Services
-- Penetration Testing
-- Compliance Auditing (GDPR, ISO 27001)
-- Incident Response
-- Security Training
-- Vulnerability Management
+### Our Services
+- **Penetration Testing** → Web applications, networks, cloud environments, and mobile
+- **Compliance Auditing** → GDPR, ISO 27001, PCI DSS, SOC 2
+- **Vulnerability Management** → SAST/DAST scanning, risk scoring, and remediation guidance
+- **Core Expertise** → Reverse engineering, network security, cloud hardening, and proactive threat intelligence
 
-## Legal Compliance
-All services conducted with proper authorization and full legal compliance.
+**Certifications**: CREST-Accredited, ISO 27001 Certified, OSCP Certified  
+**Features**: 24/7 monitoring, real-time threat dashboard, 100% legal compliance
 
-## Contact
-Email: supports4dservices@protonmail.com
-Response: Within 24 hours
+### Live Website
+Visit us: [https://cyberma-services.vercel.app](https://cyberma-services.vercel.app)
+
+Explore our real-time threat intelligence dashboard, request a security assessment, or contact our team directly.
+
+**Contact**: supports4dservices@protonmail.com (24-48 hour response)
+
+Professional inquiries welcome — let's secure your enterprise today.
