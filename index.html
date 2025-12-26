@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberMA Services | Cybersecurity & Cloud Solutions</title>
+    
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <img src="/assets/CyberMA.png" alt="CyberMA Services Logo" style="max-height: 80px;">
-<!-- Title and Basic SEO -->
-<img src="/assets/logo.png" alt="Cyberma Services - Cybersecurity Solutions" style="height:60px;">
-<meta name="description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:url" content="https://cyberma-services.vercel.app">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cyberma Services | Cybersecurity & Cloud Solutions">
-<meta property="og:description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
-<meta property="og:image" content="https://cyberma-services.vercel.app/assets/social-preview.jpg"> <!-- Upload real image -->
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cyberma Services | Cybersecurity & Cloud Solutions">
-<meta name="twitter:description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
-<meta name="twitter:image" content="https://cyberma-services.vercel.app/assets/social-preview.jpg">    
+    
+    <!-- Basic SEO -->
+    <meta name="description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://cyberma-services.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CyberMA Services | Cybersecurity & Cloud Solutions">
+    <meta property="og:description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
+    <meta property="og:image" content="https://cyberma-services.vercel.app/assets/CyberMA.png">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CyberMA Services | Cybersecurity & Cloud Solutions">
+    <meta name="twitter:description" content="Expert penetration testing, vulnerability assessment, cloud security, and IT managed services. Global cybersecurity solutions.">
+    <meta name="twitter:image" content="https://cyberma-services.vercel.app/assets/CyberMA.png">
+    
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -696,6 +701,15 @@
             line-height: 1.6;
         }
         
+        /* ===== CREDENTIALS SECTION ===== */
+        .credentials-section {
+            background: linear-gradient(180deg, rgba(13, 14, 18, 0.8) 0%, rgba(26, 27, 35, 0.9) 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 60px auto;
+            max-width: 1000px;
+        }
+        
         /* ===== CONTACT FORM ===== */
         .contact-grid {
             display: grid;
@@ -1002,6 +1016,10 @@
             .dashboard {
                 padding: 20px;
             }
+            
+            .glass-card {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -1013,17 +1031,17 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <div class="logo-icon">S4D</div>
-                <div class="logo-text">CYBER <span>SECURITY</span></div>
+                <img src="/assets/CyberMA.png" alt="CyberMA Services Logo" style="height: 48px;">
+                <div class="logo-text">CYBERMA <span>SERVICES</span></div>
             </a>
             
             <div class="nav-links" id="navLinks">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#credentials" class="nav-link">Credentials</a>
                 <a href="#dashboard" class="nav-link">Dashboard</a>
                 <a href="#legal" class="nav-link">Compliance</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="terms-of-service.html" class="nav-link">Legal</a>
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1037,21 +1055,24 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content fade-in">
-                <div class="hero-badge">
-                    <i class="fas fa-shield-check"></i>
-                    CREST-Accredited Security Testing
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <img src="/assets/CyberMA.png" alt="CyberMA Services Logo" style="max-height: 120px;">
                 </div>
                 
-                <h1 class="hero-title">Enterprise Threat Intelligence<br>& Defense Solutions</h1>
+                <div class="hero-badge">
+                    <i class="fas fa-shield-check"></i>
+                    Professional Ethical Hacking Services
+                </div>
+                
+                <h1 class="hero-title">Advanced Cybersecurity<br>& Threat Protection</h1>
                 
                 <p class="hero-subtitle">
-                    Advanced cybersecurity services for global enterprises. Professional penetration testing, 
-                    compliance auditing, and threat intelligence with full legal authorization and industry-leading methodology.
+                    Penetration testing, vulnerability assessment, security automation, and professional reporting for global clients.
                 </p>
                 
                 <a href="#contact" class="cta-button accent">
                     <i class="fas fa-headset"></i>
-                    Request Security Assessment
+                    Get Your Security Assessment
                 </a>
                 
                 <div class="hero-stats">
@@ -1193,6 +1214,51 @@
                             <h4>Threat Intelligence</h4>
                             <p>Real-time threat intelligence gathering, analysis, and proactive defense strategy development.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials & Certifications Section (NEW) -->
+    <section id="credentials" class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Credentials & Experience</h2>
+                <p>Self-taught cybersecurity practitioner with proven hands-on skills</p>
+            </div>
+            
+            <div class="glass-card fade-in" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h3>AHMED ELHIOULI</h3>
+                <p style="color: var(--text-secondary); margin: 16px 0;">
+                    Aspiring Cybersecurity Analyst | Offensive Security Practitioner
+                </p>
+                
+                <p style="margin-bottom: 32px;">
+                    Self-directed professional with hands-on experience in penetration testing, vulnerability assessment, and security automation.<br>
+                    Ranked in the top 8% globally on TryHackMe (148k+ points, 53 rooms completed, including Mr. Robot CTF and OWASP Top 10).<br>
+                    Developer of open-source Python tool for automated pentest reporting.
+                </p>
+                
+                <!-- TryHackMe Advent of Cyber 2025 Certificate -->
+                <div style="margin: 40px 0;">
+                    <h4>Advent of Cyber 2025 Completion</h4>
+                    <img src="/assets/advent-2025.png" 
+                         alt="Advent of Cyber 2025 Certificate - TryHackMe"
+                         style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+                    <p style="margin-top: 16px; color: var(--text-secondary);">
+                        Completed 24 cybersecurity challenges • Issued December 25, 2025
+                    </p>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 32px;">
+                    <div>
+                        <strong style="color: var(--accent); font-size: 2.2rem;">148k+</strong>
+                        <p>TryHackMe Points</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--accent); font-size: 2.2rem;">Top 8%</strong>
+                        <p>Global Ranking</p>
                     </div>
                 </div>
             </div>
@@ -1396,7 +1462,7 @@
                         <input type="text" name="_gotcha" class="honeypot" tabindex="-1">
                         
                         <!-- Hidden fields -->
-                        <input type="hidden" name="_subject" value="New Security Assessment Request - S4D Cyber">
+                        <input type="hidden" name="_subject" value="New Security Assessment Request - CyberMA Services">
                         <input type="hidden" name="_replyto" value="supports4dservices@protonmail.com">
                         
                         <div class="form-group">
@@ -1458,7 +1524,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-logo">S4D <span>CYBER</span></div>
+                    <img src="/assets/CyberMA.png" alt="CyberMA Services Logo" style="height: 60px; margin-bottom: 20px;">
                     <p class="footer-tagline">
                         Advanced cybersecurity solutions for enterprise organizations. 
                         Professional services with full legal compliance and authorization.
@@ -1479,10 +1545,10 @@
                     <div class="footer-column">
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="acceptable-use.html">Acceptable Use</a></li>
                             <li><a href="#legal">Compliance</a></li>
+                            <li><a href="#legal">Ethical Guidelines</a></li>
+                            <li><a href="#legal">Authorization</a></li>
+                            <li><a href="#legal">Confidentiality</a></li>
                         </ul>
                     </div>
                     
@@ -1491,7 +1557,7 @@
                         <ul>
                             <li><a href="#contact">Request Assessment</a></li>
                             <li><a href="mailto:supports4dservices@protonmail.com">Email Support</a></li>
-                            <li><a href="#legal">Legal Compliance</a></li>
+                            <li><a href="#credentials">Credentials</a></li>
                             <li><a href="#contact">Consultation</a></li>
                         </ul>
                     </div>
@@ -1499,7 +1565,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>© <span id="currentYear"></span> S4D Cyber Security Services. All rights reserved.</p>
+                <p>© <span id="currentYear"></span> CyberMA Security Services. All rights reserved.</p>
                 <p>All services conducted within legal boundaries with proper authorization. Professional cybersecurity consulting only.</p>
             </div>
         </div>
